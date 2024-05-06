@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:modern_themes/modern_themes.dart' show Themes;
-import 'package:string_translate/string_translate.dart' hide StandardTranslations;
+import 'package:string_translate/string_translate.dart'
+    hide StandardTranslations;
+import 'package:the_spy/data/translations.dart';
 
 void main() {
   runApp(const SpyGame());
@@ -14,14 +16,12 @@ final class SpyGame extends StatefulWidget {
 }
 
 final class _SpyGameState extends State<SpyGame> {
-
   @override
   void initState() {
     Translation.init(
-        supportedLocales: TranslationLocales.all,
-        defaultLocale: TranslationLocales.english,
-        // TODO: add translations
-        translations: {},
+      supportedLocales: TranslationLocales.all,
+      defaultLocale: TranslationLocales.english,
+      translations: translations,
     );
     super.initState();
   }

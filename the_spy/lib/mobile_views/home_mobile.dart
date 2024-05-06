@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:string_translate/string_translate.dart' show Translate;
+import 'package:the_spy/routing/routes.dart';
 
-class HomeMobile extends StatelessWidget {
+final class HomeMobile extends StatelessWidget {
   const HomeMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar,
-      body: _body,
+      body: _getBody(context),
     );
   }
 
@@ -19,18 +20,24 @@ class HomeMobile extends StatelessWidget {
     );
   }
 
-  Widget get _body {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      verticalDirection: VerticalDirection.down,
-      children: [
-        ElevatedButton(
-          onPressed: () {},
-          child: Text("New Game".tr()),
-        ),
-      ],
+  Center _getBody(BuildContext context) {
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        verticalDirection: VerticalDirection.down,
+        children: [
+          ElevatedButton(
+            onPressed: () => Navigator.pushNamed(context, Routes.gameConfig),
+            child: Text("New Game".tr()),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text("Categories".tr()),
+          ),
+        ],
+      ),
     );
   }
 }

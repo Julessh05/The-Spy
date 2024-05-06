@@ -10,6 +10,9 @@ final Map<String, Map<Locale, String>> _translations = {
   "New Game": {
     TranslationLocales.german: "Neues Spiel",
   },
+  "Categories": {
+    TranslationLocales.german: "Kategorien",
+  },
 };
 
 /// Getter for the Translations.

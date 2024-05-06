@@ -3,6 +3,8 @@ import 'package:modern_themes/modern_themes.dart' show Themes;
 import 'package:string_translate/string_translate.dart'
     hide StandardTranslations;
 import 'package:the_spy/data/translations.dart';
+import 'package:the_spy/mobile_views/home_mobile.dart';
+import 'package:the_spy/routing/routes.dart';
 
 void main() {
   runApp(const SpyGame());
@@ -51,6 +53,10 @@ final class _SpyGameState extends State<SpyGame> {
       highContrastDarkTheme: Themes.highContrastDarkTheme,
 
       /* ROUTING */
+      initialRoute: Routes.home,
+      routes: {
+        Routes.home: (_) => const HomeMobile(),
+      },
       // TODO: add Routing
     );
   }

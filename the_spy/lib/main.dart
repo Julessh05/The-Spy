@@ -58,8 +58,16 @@ final class _SpyGameState extends State<SpyGame> {
       initialRoute: Routes.home,
       routes: {
         Routes.home: (_) => const HomeMobile(),
-        Routes.gameConfig: (_) => GameConfigMobile(),
-        Routes.game: (_) => const GameMobile()
+        Routes.gameConfig: (_) => const GameConfigMobile(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == Routes.game) {
+          final args = settings.arguments as List<int>;
+          return MaterialPageRoute(
+              builder: (_) =>
+                  GameMobile(numberPlayer: args[0], numberSpies: args[1]));
+        }
+        return null;
       },
     );
   }

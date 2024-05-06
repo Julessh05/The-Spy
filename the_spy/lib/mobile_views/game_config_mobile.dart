@@ -3,9 +3,14 @@ import 'package:flutter/services.dart' show FilteringTextInputFormatter;
 import 'package:string_translate/string_translate.dart' show Translate;
 import 'package:the_spy/routing/routes.dart';
 
-class GameConfigMobile extends StatelessWidget {
-  GameConfigMobile({super.key});
+class GameConfigMobile extends StatefulWidget {
+  const GameConfigMobile({super.key});
 
+  @override
+  State<GameConfigMobile> createState() => _GameConfigMobileState();
+}
+
+class _GameConfigMobileState extends State<GameConfigMobile> {
   int _numberPlayer = 2;
 
   int _numberSpies = 1;
@@ -40,6 +45,11 @@ class GameConfigMobile extends StatelessWidget {
             decoration: InputDecoration(
               labelText: "Number of Players:".tr(),
             ),
+            onChanged: (n) {
+              setState(() {
+                _numberPlayer = int.parse(n);
+              });
+            },
           ),
         ),
         Padding(
@@ -52,6 +62,11 @@ class GameConfigMobile extends StatelessWidget {
             decoration: InputDecoration(
               labelText: "Number of Spies:".tr(),
             ),
+            onChanged: (n) {
+              setState(() {
+                _numberSpies = int.parse(n);
+              });
+            },
           ),
         ),
         ElevatedButton(

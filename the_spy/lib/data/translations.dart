@@ -13,6 +13,9 @@ final Map<String, Map<Locale, String>> _translations = {
   "Categories": {
     TranslationLocales.german: "Kategorien",
   },
+  "Game Settings": {
+    TranslationLocales.german: "Spiel Einstellungen",
+  },
 };
 
 /// Getter for the Translations.

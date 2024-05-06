@@ -27,7 +27,7 @@ android {
         release {
         }
     }
-    namespace "dev.jules.the_spy.the_spy"
+    namespace "dev.jules.the_spy"
     compileSdk 34
     ndkVersion '26.2.11394342'
 
@@ -45,7 +45,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "dev.jules.the_spy.the_spy"
+        applicationId "dev.jules.the_spy"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion

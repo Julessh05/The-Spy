@@ -16,6 +16,9 @@ final Map<String, Map<Locale, String>> _translations = {
   "Game Settings": {
     TranslationLocales.german: "Spiel Einstellungen",
   },
+  "Start": {
+    TranslationLocales.german: "Start",
+  }
 };
 
 /// Getter for the Translations.

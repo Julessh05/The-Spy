@@ -35,6 +35,7 @@ dependencies:
   string_translate: ^1.4.5
   modern_themes: ^1.5.4
   color_chooser: ^0.4.13
+  bloc_implementation: ^1.1.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

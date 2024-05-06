@@ -3,7 +3,8 @@ import 'package:modern_themes/modern_themes.dart' show Themes;
 import 'package:string_translate/string_translate.dart'
     hide StandardTranslations;
 import 'package:the_spy/data/translations.dart';
-import 'package:the_spy/mobile_views/game_config.dart';
+import 'package:the_spy/mobile_views/game_config_mobile.dart';
+import 'package:the_spy/mobile_views/game_mobile.dart';
 import 'package:the_spy/mobile_views/home_mobile.dart';
 import 'package:the_spy/routing/routes.dart';
 
@@ -57,9 +58,9 @@ final class _SpyGameState extends State<SpyGame> {
       initialRoute: Routes.home,
       routes: {
         Routes.home: (_) => const HomeMobile(),
-        Routes.gameConfig: (_) => const GameConfig()
+        Routes.gameConfig: (_) => GameConfigMobile(),
+        Routes.game: (_) => const GameMobile()
       },
-      // TODO: add Routing
     );
   }
 }

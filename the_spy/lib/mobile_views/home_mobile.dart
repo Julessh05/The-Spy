@@ -28,9 +28,12 @@ final class HomeMobile extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         verticalDirection: VerticalDirection.down,
         children: [
-          ElevatedButton(
-            onPressed: () => Navigator.pushNamed(context, Routes.gameConfig),
-            child: Text("New Game".tr()),
+          Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, Routes.gameConfig),
+              child: Text("New Game".tr()),
+            ),
           ),
           ElevatedButton(
             onPressed: () {},

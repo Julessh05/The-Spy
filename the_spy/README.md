@@ -1,16 +1,9 @@
-# the_spy
+# The Spy
 
-The Game of identifying the Spy among us
+"The Game of identifying the Spy among us"
 
-## Getting Started
+In this Game, all players except the specified number of spies receive a single word—all the same one.
+Through asking one-another questions, the non-spies have to identify who's the spy among them.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Sometimes this Game is also called spyfall, refer to wikipedia for that: 
+refer to wikipedia for that: [Spyfall](https://en.wikipedia.org/wiki/Spyfall_(card_game))

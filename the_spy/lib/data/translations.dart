@@ -125,7 +125,7 @@ final Map<String, Map<Locale, String>> _wordtranslations = {
   "Keyboard": {
     TranslationLocales.german: "Tastatur",
   },
-}
+};
 
 /// Getter for the Translations.
 /// Adds the Standard Translations to the

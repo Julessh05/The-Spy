@@ -19,6 +19,9 @@ final Map<String, Map<Locale, String>> _translations = {
   "Start": {
     TranslationLocales.german: "Start",
   },
+  "Tap to show": {
+    TranslationLocales.german: "Tippe um aufzudecken",
+  },
 };
 
 final Map<String, Map<Locale, String>> _wordtranslations = {

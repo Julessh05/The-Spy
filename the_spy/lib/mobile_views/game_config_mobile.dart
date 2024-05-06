@@ -70,14 +70,17 @@ class _GameConfigMobileState extends State<GameConfigMobile> {
           ),
         ),
         ElevatedButton(
-          onPressed: () => (_numberPlayer > 0 &&
-                  _numberSpies > 0 &&
-                  _numberPlayer > _numberSpies)
-              ? Navigator.pushReplacementNamed(
-                  context,
-                  Routes.game,
-                )
-              : null,
+          onPressed: () {
+            if (_numberPlayer > 0 &&
+                _numberSpies > 0 &&
+                _numberPlayer > _numberSpies) {
+              Navigator.pushReplacementNamed(
+                context,
+                Routes.game,
+                arguments: [_numberPlayer, _numberSpies],
+              );
+            }
+          },
           child: Text("Start".tr()),
         )
       ],

@@ -24,7 +24,7 @@ final Map<String, Map<Locale, String>> _translations = {
   },
 };
 
-final Map<String, Map<Locale, String>> _wordtranslations = {
+final Map<String, Map<Locale, String>> _wordTranslations = {
   // Home Words
   "Bedroom": {
     TranslationLocales.german: "Schlafzimmer",
@@ -135,6 +135,6 @@ final Map<String, Map<Locale, String>> _wordtranslations = {
 /// Custom Translations.
 Map<String, Map<Locale, String>> get translations {
   _translations.addAll(StandardTranslations.all);
-  _translations.addAll(_wordtranslations);
+  _translations.addAll(_wordTranslations);
   return _translations;
 }

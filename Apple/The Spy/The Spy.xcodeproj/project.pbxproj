@@ -1,0 +1,634 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		840932152BEB6D9900550066 /* RoleViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840932142BEB6D9900550066 /* RoleViewer.swift */; };
+		846A1D0C2BEB636600BCF715 /* The_SpyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D0B2BEB636600BCF715 /* The_SpyApp.swift */; };
+		846A1D0E2BEB636600BCF715 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D0D2BEB636600BCF715 /* ContentView.swift */; };
+		846A1D122BEB636800BCF715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846A1D112BEB636800BCF715 /* Assets.xcassets */; };
+		846A1D162BEB636800BCF715 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846A1D152BEB636800BCF715 /* Preview Assets.xcassets */; };
+		846A1D202BEB636800BCF715 /* The_SpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D1F2BEB636800BCF715 /* The_SpyTests.swift */; };
+		846A1D2A2BEB636800BCF715 /* The_SpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D292BEB636800BCF715 /* The_SpyUITests.swift */; };
+		846A1D2C2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */; };
+		846A1D392BEB6A1900BCF715 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D382BEB6A1900BCF715 /* GameConfig.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		846A1D1C2BEB636800BCF715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846A1D002BEB636600BCF715 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 846A1D072BEB636600BCF715;
+			remoteInfo = "The Spy";
+		};
+		846A1D262BEB636800BCF715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846A1D002BEB636600BCF715 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 846A1D072BEB636600BCF715;
+			remoteInfo = "The Spy";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		840932142BEB6D9900550066 /* RoleViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleViewer.swift; sourceTree = "<group>"; };
+		846A1D082BEB636600BCF715 /* The Spy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Spy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A1D0B2BEB636600BCF715 /* The_SpyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyApp.swift; sourceTree = "<group>"; };
+		846A1D0D2BEB636600BCF715 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		846A1D112BEB636800BCF715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		846A1D132BEB636800BCF715 /* The_Spy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = The_Spy.entitlements; sourceTree = "<group>"; };
+		846A1D152BEB636800BCF715 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		846A1D1B2BEB636800BCF715 /* The SpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The SpyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A1D1F2BEB636800BCF715 /* The_SpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyTests.swift; sourceTree = "<group>"; };
+		846A1D252BEB636800BCF715 /* The SpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The SpyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		846A1D292BEB636800BCF715 /* The_SpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITests.swift; sourceTree = "<group>"; };
+		846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		846A1D382BEB6A1900BCF715 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		846A1D052BEB636600BCF715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A1D182BEB636800BCF715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A1D222BEB636800BCF715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		846A1CFF2BEB636600BCF715 = {
+			isa = PBXGroup;
+			children = (
+				846A1D0A2BEB636600BCF715 /* The Spy */,
+				846A1D1E2BEB636800BCF715 /* The SpyTests */,
+				846A1D282BEB636800BCF715 /* The SpyUITests */,
+				846A1D092BEB636600BCF715 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		846A1D092BEB636600BCF715 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				846A1D082BEB636600BCF715 /* The Spy.app */,
+				846A1D1B2BEB636800BCF715 /* The SpyTests.xctest */,
+				846A1D252BEB636800BCF715 /* The SpyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		846A1D0A2BEB636600BCF715 /* The Spy */ = {
+			isa = PBXGroup;
+			children = (
+				846A1D0B2BEB636600BCF715 /* The_SpyApp.swift */,
+				846A1D0D2BEB636600BCF715 /* ContentView.swift */,
+				846A1D382BEB6A1900BCF715 /* GameConfig.swift */,
+				846A1D112BEB636800BCF715 /* Assets.xcassets */,
+				846A1D132BEB636800BCF715 /* The_Spy.entitlements */,
+				846A1D142BEB636800BCF715 /* Preview Content */,
+				840932142BEB6D9900550066 /* RoleViewer.swift */,
+			);
+			path = "The Spy";
+			sourceTree = "<group>";
+		};
+		846A1D142BEB636800BCF715 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				846A1D152BEB636800BCF715 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		846A1D1E2BEB636800BCF715 /* The SpyTests */ = {
+			isa = PBXGroup;
+			children = (
+				846A1D1F2BEB636800BCF715 /* The_SpyTests.swift */,
+			);
+			path = "The SpyTests";
+			sourceTree = "<group>";
+		};
+		846A1D282BEB636800BCF715 /* The SpyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				846A1D292BEB636800BCF715 /* The_SpyUITests.swift */,
+				846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */,
+			);
+			path = "The SpyUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		846A1D072BEB636600BCF715 /* The Spy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846A1D2F2BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The Spy" */;
+			buildPhases = (
+				846A1D042BEB636600BCF715 /* Sources */,
+				846A1D052BEB636600BCF715 /* Frameworks */,
+				846A1D062BEB636600BCF715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Spy";
+			productName = "The Spy";
+			productReference = 846A1D082BEB636600BCF715 /* The Spy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		846A1D1A2BEB636800BCF715 /* The SpyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846A1D322BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The SpyTests" */;
+			buildPhases = (
+				846A1D172BEB636800BCF715 /* Sources */,
+				846A1D182BEB636800BCF715 /* Frameworks */,
+				846A1D192BEB636800BCF715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846A1D1D2BEB636800BCF715 /* PBXTargetDependency */,
+			);
+			name = "The SpyTests";
+			productName = "The SpyTests";
+			productReference = 846A1D1B2BEB636800BCF715 /* The SpyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		846A1D242BEB636800BCF715 /* The SpyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 846A1D352BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The SpyUITests" */;
+			buildPhases = (
+				846A1D212BEB636800BCF715 /* Sources */,
+				846A1D222BEB636800BCF715 /* Frameworks */,
+				846A1D232BEB636800BCF715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				846A1D272BEB636800BCF715 /* PBXTargetDependency */,
+			);
+			name = "The SpyUITests";
+			productName = "The SpyUITests";
+			productReference = 846A1D252BEB636800BCF715 /* The SpyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		846A1D002BEB636600BCF715 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					846A1D072BEB636600BCF715 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					846A1D1A2BEB636800BCF715 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 846A1D072BEB636600BCF715;
+					};
+					846A1D242BEB636800BCF715 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 846A1D072BEB636600BCF715;
+					};
+				};
+			};
+			buildConfigurationList = 846A1D032BEB636600BCF715 /* Build configuration list for PBXProject "The Spy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 846A1CFF2BEB636600BCF715;
+			productRefGroup = 846A1D092BEB636600BCF715 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				846A1D072BEB636600BCF715 /* The Spy */,
+				846A1D1A2BEB636800BCF715 /* The SpyTests */,
+				846A1D242BEB636800BCF715 /* The SpyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		846A1D062BEB636600BCF715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846A1D162BEB636800BCF715 /* Preview Assets.xcassets in Resources */,
+				846A1D122BEB636800BCF715 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A1D192BEB636800BCF715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A1D232BEB636800BCF715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		846A1D042BEB636600BCF715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846A1D0E2BEB636600BCF715 /* ContentView.swift in Sources */,
+				846A1D392BEB6A1900BCF715 /* GameConfig.swift in Sources */,
+				846A1D0C2BEB636600BCF715 /* The_SpyApp.swift in Sources */,
+				840932152BEB6D9900550066 /* RoleViewer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A1D172BEB636800BCF715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846A1D202BEB636800BCF715 /* The_SpyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		846A1D212BEB636800BCF715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846A1D2A2BEB636800BCF715 /* The_SpyUITests.swift in Sources */,
+				846A1D2C2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		846A1D1D2BEB636800BCF715 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 846A1D072BEB636600BCF715 /* The Spy */;
+			targetProxy = 846A1D1C2BEB636800BCF715 /* PBXContainerItemProxy */;
+		};
+		846A1D272BEB636800BCF715 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 846A1D072BEB636600BCF715 /* The Spy */;
+			targetProxy = 846A1D262BEB636800BCF715 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		846A1D2D2BEB636800BCF715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		846A1D2E2BEB636800BCF715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		846A1D302BEB636800BCF715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "The Spy/The_Spy.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
+				DEVELOPMENT_TEAM = Q87UDX5898;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "The Spy";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.The-Spy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		846A1D312BEB636800BCF715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "The Spy/The_Spy.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
+				DEVELOPMENT_TEAM = Q87UDX5898;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "The Spy";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.The-Spy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		846A1D332BEB636800BCF715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q87UDX5898;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.The-SpyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Spy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/The Spy";
+			};
+			name = Debug;
+		};
+		846A1D342BEB636800BCF715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q87UDX5898;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.The-SpyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Spy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/The Spy";
+			};
+			name = Release;
+		};
+		846A1D362BEB636800BCF715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q87UDX5898;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.The-SpyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Spy";
+			};
+			name = Debug;
+		};
+		846A1D372BEB636800BCF715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q87UDX5898;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.The-SpyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Spy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		846A1D032BEB636600BCF715 /* Build configuration list for PBXProject "The Spy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846A1D2D2BEB636800BCF715 /* Debug */,
+				846A1D2E2BEB636800BCF715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846A1D2F2BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The Spy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846A1D302BEB636800BCF715 /* Debug */,
+				846A1D312BEB636800BCF715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846A1D322BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The SpyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846A1D332BEB636800BCF715 /* Debug */,
+				846A1D342BEB636800BCF715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		846A1D352BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The SpyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				846A1D362BEB636800BCF715 /* Debug */,
+				846A1D372BEB636800BCF715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 846A1D002BEB636600BCF715 /* Project object */;
+}

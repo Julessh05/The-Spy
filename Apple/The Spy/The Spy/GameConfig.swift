@@ -13,6 +13,8 @@ internal struct GameConfig: View {
     
     @State private var numberSpies : String = "1"
     
+    @Binding internal var gameRunning : Bool
+    
     var body: some View {
         VStack {
             TextField("Number of Players", text: $numberPlayer)
@@ -20,7 +22,8 @@ internal struct GameConfig: View {
             NavigationLink("Start") {
                 RoleViewer(
                     numberPlayer: Int(numberPlayer)!,
-                    numberSpies: Int(numberSpies)!
+                    numberSpies: Int(numberSpies)!,
+                    gameRunning: $gameRunning
                 )
             }
         }
@@ -33,6 +36,10 @@ internal struct GameConfig: View {
     }
 }
 
-#Preview {
-    GameConfig()
+internal struct GameConfigPreview : PreviewProvider {
+    @State internal static var gameRunning : Bool = false
+    
+    static var previews: some View {
+        GameConfig(gameRunning: $gameRunning)
+    }
 }

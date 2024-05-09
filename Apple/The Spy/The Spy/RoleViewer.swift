@@ -9,13 +9,16 @@ import SwiftUI
 
 internal struct RoleViewer: View {
     
-    internal init(numberPlayer : Int, numberSpies : Int) {
+    private var gameRunning : Binding<Bool>
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    internal init(numberPlayer : Int, numberSpies : Int, gameRunning : Binding<Bool>) {
+        self.gameRunning = gameRunning
         self.numberPlayer = numberPlayer
+        self.numberSpies = numberSpies
         word = "Loaded Word"
         spyNumbers = []
-        for _ in 0...numberSpies {
-            spyNumbers.append(Int.random(in: 1...playerCounter))
-        }
         do {
             let json = try JSONSerialization.jsonObject(with: NSDataAsset(name: "Words")!.data, options: [.topLevelDictionaryAssumed]) as! [String : [String]]
             let category = json.randomElement()!
@@ -29,11 +32,13 @@ internal struct RoleViewer: View {
     
     private let numberPlayer : Int
     
+    private let numberSpies : Int
+    
     private var word : String
     
     @State private var playerCounter : Int = 1
     
-    private var spyNumbers : [Int]
+    @State private var spyNumbers : [Int]
     
     @State private var textToShow : String = ""
     
@@ -41,13 +46,25 @@ internal struct RoleViewer: View {
         Button {
             btnTap()
         } label: {
-            if hidden {
+            if playerCounter > numberPlayer {
+              Text("Tap to start")
+            } else if hidden {
                 Text("Tap to show")
             } else {
                 VStack {
                     Text(textToShow)
                     Text("Tap to hide again")
                 }
+            }
+        }
+        .onAppear {
+            for _ in 1...numberSpies {
+                var rm = Int.random(in: 1...numberPlayer)
+                while spyNumbers.contains(rm) {
+                    rm = Int.random(in: 1...numberPlayer)
+                }
+                spyNumbers.append(rm)
+                print(spyNumbers)
             }
         }
         .navigationTitle("Roles")
@@ -58,18 +75,27 @@ internal struct RoleViewer: View {
     }
     
     private func btnTap() -> Void {
+        guard hidden else {
+            hidden.toggle()
+            playerCounter += 1
+            return
+        }
         if spyNumbers.contains(playerCounter) {
             textToShow = "You're a Spy"
         } else if playerCounter > numberPlayer {
-            // TODO: exit
+            gameRunning.wrappedValue = true
+            dismiss()
         } else {
             textToShow = word
         }
-        playerCounter += 1
         hidden.toggle()
     }
 }
 
-#Preview {
-    RoleViewer(numberPlayer: 4, numberSpies: 1)
+internal struct RoleViewerPreview : PreviewProvider {
+    @State internal static var gameRunning : Bool = false
+    
+    static var previews: some View {
+        RoleViewer(numberPlayer: 4, numberSpies: 1, gameRunning: $gameRunning)
+    }
 }

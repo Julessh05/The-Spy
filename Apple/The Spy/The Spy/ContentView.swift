@@ -10,16 +10,22 @@ import SwiftData
 
 internal struct ContentView: View {
     
+    @State private var gameRunning : Bool = false
+    
     var body: some View {
         NavigationSplitView {
-            VStack {
-                NavigationLink("New Game") {
-                    GameConfig()
-                }
-                .navigationTitle("Welcome")
+            if gameRunning {
+                GameView(gameRunning: $gameRunning)
+            } else {
+                VStack {
+                    NavigationLink("New Game") {
+                        GameConfig(gameRunning: $gameRunning)
+                    }
+                    .navigationTitle("Welcome")
 #if !os(macOS)
-                .navigationBarTitleDisplayMode(.automatic)
+                    .navigationBarTitleDisplayMode(.automatic)
 #endif
+                }
             }
         } detail: {
             Text("Nothing to see here yet...")

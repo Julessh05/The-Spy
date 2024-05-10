@@ -21,10 +21,16 @@ internal struct GameView: View {
     
     var body: some View {
         VStack {
-            Text("Timer")
+            Text("Timer:")
             Text("\(String(minutes)):\(String(seconds))")
             Button("Done") {
                 gameRunning.toggle()
+                timer.upstream.connect().cancel()
+            }
+            Button {
+                minutes += 1
+            } label: {
+                Label("+ 1 Minute", systemImage: "plus")
             }
         }
         .alert("Game Over", isPresented: $gameOverDialog) {

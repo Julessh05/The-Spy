@@ -17,16 +17,21 @@ internal struct GameConfig: View {
     
     var body: some View {
         VStack {
-            TextField("Number of Players", text: $numberPlayer)
-            TextField("Number of Spies", text: $numberSpies)
+            TextField("Number of Players", text: $numberPlayer, prompt: Text("How many peolpe are playing?"))
+            TextField("Number of Spies", text: $numberSpies, prompt: Text("How many spies should be there?"))
             NavigationLink("Start") {
-                RoleViewer(
-                    numberPlayer: Int(numberPlayer)!,
-                    numberSpies: Int(numberSpies)!,
-                    gameRunning: $gameRunning
-                )
+                if !numberSpies.isEmpty && !numberPlayer.isEmpty {
+                    RoleViewer(
+                        numberPlayer: Int(numberPlayer)!,
+                        numberSpies: Int(numberSpies)!,
+                        gameRunning: $gameRunning
+                    )
+                }
             }
+            .disabled(numberSpies.isEmpty || numberPlayer.isEmpty || numberPlayer <= numberSpies)
         }
+        .keyboardType(.numberPad)
+        .textContentType(.none)
         .textFieldStyle(.roundedBorder)
         .padding(.all, 24)
         .navigationTitle("New Game")

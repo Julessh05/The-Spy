@@ -1,67 +1,67 @@
 {
   "images" : [
     {
-      "filename" : "The Spy@1024.png",
+      "filename" : "The Spy@1024 w:o alpha.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
     },
     {
-      "filename" : "The Spy@16.png",
+      "filename" : "The Spy@16 w:o alpha.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "The Spy@32 1.png",
+      "filename" : "The Spy@32 w:o alpha 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "The Spy@32.png",
+      "filename" : "The Spy@32 w:o alpha.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "The Spy@64.png",
+      "filename" : "The Spy@64 w:o alpha.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "The Spy@128.png",
+      "filename" : "The Spy@128 w:o alpha.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "The Spy@256 1.png",
+      "filename" : "The Spy@256 w:o alpha.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "The Spy@256.png",
+      "filename" : "The Spy@256 w:o alpha 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "The Spy@512.png",
+      "filename" : "The Spy@512 w:o alpha.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "The Spy@512 1.png",
+      "filename" : "The Spy@512 w:o alpha 1.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "The Spy@1024 1.png",
+      "filename" : "The Spy@1024 w:o alpha 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

@@ -64,7 +64,6 @@ internal struct RoleViewer: View {
                     rm = Int.random(in: 1...numberPlayer)
                 }
                 spyNumbers.append(rm)
-                print(spyNumbers)
             }
         }
         .navigationTitle("Roles")

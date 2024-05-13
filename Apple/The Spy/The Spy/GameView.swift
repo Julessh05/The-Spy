@@ -22,7 +22,9 @@ internal struct GameView: View {
     var body: some View {
         VStack {
             Text("Timer:")
-            Text("\(String(minutes)):\(String(seconds))")
+            // From: https://stackoverflow.com/questions/32338137/padding-a-swift-string-for-printing
+            // Answer used for this (without extension): https://stackoverflow.com/a/69859859
+            Text("\(String(String(minutes).padding(toLength: 2, withPad: "0", startingAt: 0).reversed())):\(String(String(String(seconds).reversed()).padding(toLength: 2, withPad: "0", startingAt: 0).reversed()))")
             Button("Done") {
                 gameRunning.toggle()
                 timer.upstream.connect().cancel()
@@ -30,7 +32,7 @@ internal struct GameView: View {
             Button {
                 minutes += 1
             } label: {
-                Label("+ 1 Minute", systemImage: "plus")
+                Label("1 Minute", systemImage: "plus")
             }
         }
         .alert("Game Over", isPresented: $gameOverDialog) {
@@ -44,7 +46,7 @@ internal struct GameView: View {
             if seconds > 0 {
                 seconds -= 1
             } else if minutes > 0 {
-                seconds = 60
+                seconds = 59
                 minutes -= 1
             } else {
                 gameOverDialog.toggle()

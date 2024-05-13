@@ -9,9 +9,9 @@ import SwiftUI
 
 internal struct GameConfig: View {
     
-    @State private var numberPlayer : String = "2"
+    @State private var numberPlayer : String = ""
     
-    @State private var numberSpies : String = "1"
+    @State private var numberSpies : String = ""
     
     @Binding internal var gameRunning : Bool
     

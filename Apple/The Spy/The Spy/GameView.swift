@@ -13,7 +13,7 @@ internal struct GameView: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    @State private var minutes : Int = 1
+    @State private var minutes : Int = 5
     
     @State private var seconds : Int = 0
     
@@ -21,7 +21,7 @@ internal struct GameView: View {
     
     var body: some View {
         VStack {
-            Text("Timer:")
+            Text("Time remaining:")
             // From: https://stackoverflow.com/questions/32338137/padding-a-swift-string-for-printing
             // Answer used for this (without extension): https://stackoverflow.com/a/69859859
             Text("\(String(String(minutes).padding(toLength: 2, withPad: "0", startingAt: 0).reversed())):\(String(String(String(seconds).reversed()).padding(toLength: 2, withPad: "0", startingAt: 0).reversed()))")
@@ -29,6 +29,8 @@ internal struct GameView: View {
                 gameRunning.toggle()
                 timer.upstream.connect().cancel()
             }
+            .padding(.top, 8)
+            .padding(.bottom, 2)
             Button {
                 minutes += 1
             } label: {

@@ -6,6 +6,7 @@ plugins {
 android {
     signingConfigs {
         create("release") {
+            keyAlias = "release"
         }
     }
     namespace = "dev.jules.thespy"
@@ -22,6 +23,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        signingConfig = signingConfigs.getByName("release")
     }
 
     buildTypes {
@@ -38,8 +40,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -57,7 +59,7 @@ android {
         }
     }
     buildToolsVersion = "34.0.0"
-    ndkVersion = "26.2.11394342"
+    ndkVersion = "27.0.11718014 rc1"
     dependenciesInfo {
         includeInApk = true
         includeInBundle = true

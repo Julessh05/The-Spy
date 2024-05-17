@@ -4,66 +4,62 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import dev.jules.thespy.ui.theme.TheSpyTheme
 
 class MainActivity : ComponentActivity() {
-
-    @Composable
-    fun BuildNav() {
-        NavHost(navController, startDestination = "home") {
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             TheSpyTheme {
-                Body()
-            }
-        }
-    }
-}
-
-@Preview
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun Body() {
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(text = "Welcome")
+                val navController = rememberNavController()
+                Scaffold { innerPadding ->
+                    NavHost(
+                        navController = navController,
+                        startDestination = Routes.Welcome.name,
+                        modifier = Modifier.padding(innerPadding)
+                    ) {
+                        composable(Routes.Welcome.name) {
+                            Welcome {
+                                navController.navigate(Routes.Config.name)
+                            }
+                        }
+                        composable(Routes.Config.name) {
+                            GameConfig { numberPlayer, numberSpies ->
+                                // https://stackoverflow.com/questions/65542751/multiple-arguments-with-jetpack-compose-navigation
+                                navController.navigate("${Routes.RoleViewer.name}/$numberPlayer/$numberSpies")
+                            }
+                        }
+                        composable(
+                            "${Routes.RoleViewer.name}/{numberPlayer}/{numberSpies}",
+                            arguments = listOf(
+                                navArgument("numberPlayer") { type = NavType.IntType },
+                                navArgument("numberSpies") { type = NavType.IntType }
+                            )
+                        ) { backStackEntry ->
+                            RoleViewer(
+                                onNavigate = { navController.navigate(Routes.Game.name) },
+                                numberPlayer = backStackEntry.arguments?.getInt("numberPlayer")
+                                    ?: 2,
+                                numberSpies = backStackEntry.arguments?.getInt("numberSpies") ?: 1,
+                            )
+                        }
+                        composable(Routes.Game.name) {
+                            Game {
+                                navController.navigate(Routes.Welcome.name)
+                            }
+                        }
+                    }
                 }
-            )
-        }
-    ) { innerPadding ->
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Button(
-                modifier = Modifier
-                    .padding(innerPadding),
-                onClick = { /*TODO*/ }) {
-                Text("New Game")
             }
         }
     }

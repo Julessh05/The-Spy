@@ -10,18 +10,40 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
+import org.json.JSONObject
+import kotlin.random.Random
+
+private var hidden = true
+private var playerCounter = 1
+private val spyNumbers = emptyList<Int>()
+private var textToShow = ""
+private var word = ""
+private var numberPlayerGlobal = 2
 
 @Preview
 @Composable
 internal fun RoleViewer(
     @PreviewParameter(OnNavigatePreviewProvider::class) onNavigate: () -> Unit,
+    // Default parameter to enable preview
     numberPlayer: Int = 2,
     numberSpies: Int = 1
 ) {
-    var hidden = true
-    var word = "Loaded Word"
+    numberPlayerGlobal = numberPlayer
+    hidden = true
+    val stream =
+        LocalContext.current.assets.open("words.json").bufferedReader().use { it.readText() }
+    val jsObject = JSONObject(stream)
+    val categories = listOf(jsObject.names())
+    val categoryNumber = Random.nextInt(1, categories.size)
+    val category = categories[categoryNumber]
+    val wordNumber = Random.nextInt(1, category.length())
+    word = category.get(wordNumber) as String
+    for (i in 1..numberSpies) {
+        spyNumbers.plus(Random.nextInt(1, numberPlayer))
+    }
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -29,7 +51,7 @@ internal fun RoleViewer(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Box(Modifier.clickable { hidden = !hidden }) {
+        Box(Modifier.clickable { btnTap(onNavigate) }) {
             Column {
                 if (hidden) {
                     Text("Tap to show")
@@ -39,5 +61,21 @@ internal fun RoleViewer(
                 }
             }
         }
+    }
+}
+
+private fun btnTap(onNavigate: () -> Unit) {
+    if (hidden) {
+        hidden = false
+        playerCounter += 1
+    } else {
+        if (spyNumbers.contains(playerCounter)) {
+            textToShow = "You're a spy"
+        } else if (playerCounter > numberPlayerGlobal) {
+            onNavigate()
+        } else {
+            textToShow = word
+        }
+        hidden = !hidden
     }
 }

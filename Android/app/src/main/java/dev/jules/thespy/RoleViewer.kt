@@ -26,6 +26,7 @@ private val spyNumbers = emptyList<Int>()
 private var textToShow = ""
 private var word = ""
 private var numberPlayerGlobal = 2
+private var wordLoaded = false
 
 @Preview
 @Composable
@@ -35,18 +36,21 @@ internal fun RoleViewer(
     numberPlayer: Int = 2,
     numberSpies: Int = 1
 ) {
-    numberPlayerGlobal = numberPlayer
     var hidden by remember { mutableStateOf(true) }
-    val stream =
-        LocalContext.current.assets.open("words.json").bufferedReader().use { it.readText() }
-    val jsObject = JSONObject(stream)
-    val categories = jsObject.names()
-    val categoryNumber = Random.nextInt(1, categories!!.length())
-    val category = jsObject.getJSONArray(categories.getString(categoryNumber))
-    val wordNumber = Random.nextInt(1, category.length())
-    word = category.get(wordNumber).toString()
-    for (i in 1..numberSpies) {
-        spyNumbers.plus(Random.nextInt(1, numberPlayer))
+    if (!wordLoaded) {
+        numberPlayerGlobal = numberPlayer
+        val stream =
+            LocalContext.current.assets.open("words.json").bufferedReader().use { it.readText() }
+        val jsObject = JSONObject(stream)
+        val categories = jsObject.names()
+        val categoryNumber = Random.nextInt(1, categories!!.length())
+        val category = jsObject.getJSONArray(categories.getString(categoryNumber))
+        val wordNumber = Random.nextInt(1, category.length())
+        word = category.get(wordNumber).toString()
+        for (i in 1..numberSpies) {
+            spyNumbers.plus(Random.nextInt(1, numberPlayer))
+        }
+        wordLoaded = true
     }
     Column(
         modifier = Modifier
@@ -56,8 +60,8 @@ internal fun RoleViewer(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(Modifier.clickable {
-            if (hidden) {
-                hidden = false
+            if (!hidden) {
+                hidden = true
                 playerCounter += 1
             } else {
                 if (spyNumbers.contains(playerCounter)) {

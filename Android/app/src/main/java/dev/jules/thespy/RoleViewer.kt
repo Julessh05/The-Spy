@@ -8,6 +8,10 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -16,7 +20,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import org.json.JSONObject
 import kotlin.random.Random
 
-private var hidden = true
+
 private var playerCounter = 1
 private val spyNumbers = emptyList<Int>()
 private var textToShow = ""
@@ -32,7 +36,7 @@ internal fun RoleViewer(
     numberSpies: Int = 1
 ) {
     numberPlayerGlobal = numberPlayer
-    hidden = true
+    var hidden by remember { mutableStateOf(true) }
     val stream =
         LocalContext.current.assets.open("words.json").bufferedReader().use { it.readText() }
     val jsObject = JSONObject(stream)
@@ -51,31 +55,30 @@ internal fun RoleViewer(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Box(Modifier.clickable { btnTap(onNavigate) }) {
+        Box(Modifier.clickable {
+            if (hidden) {
+                hidden = false
+                playerCounter += 1
+            } else {
+                if (spyNumbers.contains(playerCounter)) {
+                    textToShow = "You're a spy"
+                } else if (playerCounter > numberPlayerGlobal) {
+                    onNavigate()
+                } else {
+                    textToShow = word
+                }
+                hidden = !hidden
+            }
+        }
+        ) {
             Column {
                 if (hidden) {
                     Text("Tap to show")
                 } else {
-                    Text("You're a spy")
+                    Text(textToShow)
                     Text("Tap to hide again")
                 }
             }
         }
-    }
-}
-
-private fun btnTap(onNavigate: () -> Unit) {
-    if (hidden) {
-        hidden = false
-        playerCounter += 1
-    } else {
-        if (spyNumbers.contains(playerCounter)) {
-            textToShow = "You're a spy"
-        } else if (playerCounter > numberPlayerGlobal) {
-            onNavigate()
-        } else {
-            textToShow = word
-        }
-        hidden = !hidden
     }
 }

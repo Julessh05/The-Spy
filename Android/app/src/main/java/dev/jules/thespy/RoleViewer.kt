@@ -36,11 +36,11 @@ internal fun RoleViewer(
     val stream =
         LocalContext.current.assets.open("words.json").bufferedReader().use { it.readText() }
     val jsObject = JSONObject(stream)
-    val categories = listOf(jsObject.names())
-    val categoryNumber = Random.nextInt(1, categories.size)
-    val category = categories[categoryNumber]
+    val categories = jsObject.names()
+    val categoryNumber = Random.nextInt(1, categories!!.length())
+    val category = jsObject.getJSONArray(categories.getString(categoryNumber))
     val wordNumber = Random.nextInt(1, category.length())
-    word = category.get(wordNumber) as String
+    word = category.get(wordNumber).toString()
     for (i in 1..numberSpies) {
         spyNumbers.plus(Random.nextInt(1, numberPlayer))
     }

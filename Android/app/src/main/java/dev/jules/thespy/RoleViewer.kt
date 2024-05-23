@@ -22,11 +22,21 @@ import kotlin.random.Random
 
 
 private var playerCounter = 1
-private val spyNumbers = emptyList<Int>()
+private var spyNumbers = emptyList<Int>()
 private var textToShow = ""
 private var word = ""
 private var numberPlayerGlobal = 2
 private var wordLoaded = false
+
+
+private fun init() {
+    playerCounter = 1
+    spyNumbers = emptyList()
+    textToShow = ""
+    word = ""
+    numberPlayerGlobal = 2
+    wordLoaded = false
+}
 
 @Preview
 @Composable
@@ -38,6 +48,7 @@ internal fun RoleViewer(
 ) {
     var hidden by remember { mutableStateOf(true) }
     if (!wordLoaded) {
+        init()
         numberPlayerGlobal = numberPlayer
         val stream =
             LocalContext.current.assets.open("words.json").bufferedReader().use { it.readText() }
@@ -48,7 +59,7 @@ internal fun RoleViewer(
         val wordNumber = Random.nextInt(1, category.length())
         word = category.get(wordNumber).toString()
         for (i in 1..numberSpies) {
-            spyNumbers.plus(Random.nextInt(1, numberPlayer))
+            spyNumbers = spyNumbers.plus(Random.nextInt(1, numberPlayer))
         }
         wordLoaded = true
     }
@@ -67,7 +78,8 @@ internal fun RoleViewer(
                 if (spyNumbers.contains(playerCounter)) {
                     textToShow = "You're a spy"
                 } else if (playerCounter > numberPlayerGlobal) {
-                    onNavigate()
+                    //wordLoaded = false
+                    //onNavigate()
                 } else {
                     textToShow = word
                 }
@@ -76,8 +88,10 @@ internal fun RoleViewer(
         }
         ) {
             Column {
-                if (hidden) {
+                if (hidden && playerCounter <= numberPlayerGlobal) {
                     Text("Tap to show")
+                } else if (hidden) {
+                    Text("Tap to start")
                 } else {
                     Text(textToShow)
                     Text("Tap to hide again")

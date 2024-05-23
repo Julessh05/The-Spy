@@ -1,5 +1,6 @@
 package dev.jules.thespy
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -38,7 +39,7 @@ private fun init() {
     wordLoaded = false
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 internal fun RoleViewer(
     @PreviewParameter(OnNavigatePreviewProvider::class) onNavigate: () -> Unit,
@@ -59,7 +60,7 @@ internal fun RoleViewer(
         val wordNumber = Random.nextInt(1, category.length())
         word = category.get(wordNumber).toString()
         for (i in 1..numberSpies) {
-            spyNumbers = spyNumbers.plus(Random.nextInt(1, numberPlayer))
+            spyNumbers = spyNumbers.plus(Random.nextInt(1, numberPlayer + 1))
         }
         wordLoaded = true
     }
@@ -78,8 +79,7 @@ internal fun RoleViewer(
                 if (spyNumbers.contains(playerCounter)) {
                     textToShow = "You're a spy"
                 } else if (playerCounter > numberPlayerGlobal) {
-                    //wordLoaded = false
-                    //onNavigate()
+                    onNavigate()
                 } else {
                     textToShow = word
                 }
@@ -92,6 +92,8 @@ internal fun RoleViewer(
                     Text("Tap to show")
                 } else if (hidden) {
                     Text("Tap to start")
+                } else if (playerCounter > numberPlayerGlobal) {
+                    Text("Loading...")
                 } else {
                     Text(textToShow)
                     Text("Tap to hide again")

@@ -1,13 +1,16 @@
 package dev.jules.thespy
 
-import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -39,6 +42,7 @@ private fun init() {
     wordLoaded = false
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true)
 @Composable
 internal fun RoleViewer(
@@ -64,39 +68,47 @@ internal fun RoleViewer(
         }
         wordLoaded = true
     }
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Box(Modifier.clickable {
-            if (!hidden) {
-                hidden = true
-                playerCounter += 1
-            } else {
-                if (spyNumbers.contains(playerCounter)) {
-                    textToShow = "You're a spy"
-                } else if (playerCounter > numberPlayerGlobal) {
-                    onNavigate()
-                } else {
-                    textToShow = word
-                }
-                hidden = !hidden
-            }
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Roles") })
         }
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight()
+                .padding(it),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Column {
-                if (hidden && playerCounter <= numberPlayerGlobal) {
-                    Text("Tap to show")
-                } else if (hidden) {
-                    Text("Tap to start")
-                } else if (playerCounter > numberPlayerGlobal) {
-                    Text("Loading...")
+            Box(Modifier.clickable {
+                if (!hidden) {
+                    hidden = true
+                    playerCounter += 1
                 } else {
-                    Text(textToShow)
-                    Text("Tap to hide again")
+                    if (spyNumbers.contains(playerCounter)) {
+                        textToShow = "You're a spy"
+                    } else if (playerCounter > numberPlayerGlobal) {
+                        onNavigate()
+                    } else {
+                        textToShow = word
+                    }
+                    hidden = !hidden
+                }
+            }
+            ) {
+                Column {
+                    if (hidden && playerCounter <= numberPlayerGlobal) {
+                        Text("Tap to show")
+                    } else if (hidden) {
+                        Text("Tap to start")
+                    } else if (playerCounter > numberPlayerGlobal) {
+                        Text("Loading...")
+                    } else {
+                        Text(textToShow)
+                        Text("Tap to hide again")
+                    }
                 }
             }
         }

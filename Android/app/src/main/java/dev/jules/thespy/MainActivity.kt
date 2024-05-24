@@ -4,9 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -22,41 +19,38 @@ class MainActivity : ComponentActivity() {
         setContent {
             TheSpyTheme {
                 val navController = rememberNavController()
-                Scaffold { innerPadding ->
-                    NavHost(
-                        navController = navController,
-                        startDestination = Routes.Welcome.name,
-                        modifier = Modifier.padding(innerPadding)
-                    ) {
-                        composable(Routes.Welcome.name) {
-                            Welcome {
-                                navController.navigate(Routes.Config.name)
-                            }
+                NavHost(
+                    navController = navController,
+                    startDestination = Routes.Welcome.name,
+                ) {
+                    composable(Routes.Welcome.name) {
+                        Welcome {
+                            navController.navigate(Routes.Config.name)
                         }
-                        composable(Routes.Config.name) {
-                            GameConfig { numberPlayer, numberSpies ->
-                                // https://stackoverflow.com/questions/65542751/multiple-arguments-with-jetpack-compose-navigation
-                                navController.navigate("${Routes.RoleViewer.name}/$numberPlayer/$numberSpies")
-                            }
+                    }
+                    composable(Routes.Config.name) {
+                        GameConfig { numberPlayer, numberSpies ->
+                            // https://stackoverflow.com/questions/65542751/multiple-arguments-with-jetpack-compose-navigation
+                            navController.navigate("${Routes.RoleViewer.name}/$numberPlayer/$numberSpies")
                         }
-                        composable(
-                            "${Routes.RoleViewer.name}/{numberPlayer}/{numberSpies}",
-                            arguments = listOf(
-                                navArgument("numberPlayer") { type = NavType.IntType },
-                                navArgument("numberSpies") { type = NavType.IntType }
-                            )
-                        ) { backStackEntry ->
-                            RoleViewer(
-                                onNavigate = { navController.navigate(Routes.Game.name) },
-                                numberPlayer = backStackEntry.arguments?.getInt("numberPlayer")
-                                    ?: 2,
-                                numberSpies = backStackEntry.arguments?.getInt("numberSpies") ?: 1,
-                            )
-                        }
-                        composable(Routes.Game.name) {
-                            Game {
-                                navController.navigate(Routes.Welcome.name)
-                            }
+                    }
+                    composable(
+                        "${Routes.RoleViewer.name}/{numberPlayer}/{numberSpies}",
+                        arguments = listOf(
+                            navArgument("numberPlayer") { type = NavType.IntType },
+                            navArgument("numberSpies") { type = NavType.IntType }
+                        )
+                    ) { backStackEntry ->
+                        RoleViewer(
+                            onNavigate = { navController.navigate(Routes.Game.name) },
+                            numberPlayer = backStackEntry.arguments?.getInt("numberPlayer")
+                                ?: 2,
+                            numberSpies = backStackEntry.arguments?.getInt("numberSpies") ?: 1,
+                        )
+                    }
+                    composable(Routes.Game.name) {
+                        Game {
+                            navController.navigate(Routes.Welcome.name)
                         }
                     }
                 }

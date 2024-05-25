@@ -24,6 +24,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import androidx.core.text.isDigitsOnly
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
@@ -72,7 +73,7 @@ fun GameConfig(
             Button(
                 onClick = { onNavigate(numberPlayer.toInt(), numberSpies.toInt()) },
                 modifier = Modifier.padding(24.dp),
-                enabled = numberPlayer.isNotEmpty() && numberSpies.isNotEmpty() && numberPlayer > numberSpies
+                enabled = numberPlayer.isNotEmpty() && numberSpies.isNotEmpty() && numberPlayer > numberSpies && numberPlayer.isDigitsOnly() && numberSpies.isDigitsOnly()
             ) {
                 Text("Done")
             }

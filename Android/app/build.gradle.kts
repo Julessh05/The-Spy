@@ -1,12 +1,25 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
 
+// Load Keystore for signing Config
+var keystoreFile = rootProject.file("keystore.properties")
+var keystoreProperties = Properties()
+keystoreProperties.load(FileInputStream(keystoreFile))
+
+
 android {
     signingConfigs {
         create("release") {
-            keyAlias = "release"
+            storeFile = keystoreFile
+            keyAlias = keystoreProperties.getProperty("keyAlias")
+            storePassword = keystoreProperties.getProperty("storePassword")
+            keyPassword = keystoreProperties.getProperty("keyPassword")
+
         }
     }
     namespace = "dev.jules.thespy"

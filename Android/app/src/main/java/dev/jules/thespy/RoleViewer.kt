@@ -90,6 +90,7 @@ internal fun RoleViewer(
                     if (spyNumbers.contains(playerCounter)) {
                         textToShow = "You're a spy"
                     } else if (playerCounter > numberPlayerGlobal) {
+                        wordLoaded = false
                         onNavigate()
                     } else {
                         textToShow = word

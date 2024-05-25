@@ -38,12 +38,12 @@ fun GameConfig(
             TopAppBar(
                 title = { Text("New Game") })
         }
-    ) {
+    ) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight()
-                .padding(it),
+                .padding(innerPadding),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -71,7 +71,8 @@ fun GameConfig(
             )
             Button(
                 onClick = { onNavigate(numberPlayer.toInt(), numberSpies.toInt()) },
-                modifier = Modifier.padding(24.dp)
+                modifier = Modifier.padding(24.dp),
+                enabled = numberPlayer.isNotEmpty() && numberSpies.isNotEmpty() && numberPlayer > numberSpies
             ) {
                 Text("Done")
             }

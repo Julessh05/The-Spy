@@ -24,6 +24,7 @@ android {
             useSupportLibrary = true
         }
         signingConfig = signingConfigs.getByName("release")
+        multiDexEnabled = true
     }
 
     buildTypes {

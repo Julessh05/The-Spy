@@ -10,6 +10,8 @@ import SwiftData
 
 internal struct ContentView: View {
     
+    @Environment(\.colorScheme) private var colorScheme
+    
     @State private var gameRunning : Bool = false
     
     var body: some View {
@@ -18,14 +20,30 @@ internal struct ContentView: View {
                 GameView(gameRunning: $gameRunning)
             } else {
                 VStack {
-                    NavigationLink("New Game") {
+                    NavigationLink {
                         GameConfig(gameRunning: $gameRunning)
+                    } label: {
+                        Text("New Game")
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .frame(width: 210, height: 70)
+                            .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
+                            .backgroundStyle(colorScheme == .dark ? .gray : .blue)
                     }
-                    .navigationTitle("Welcome")
-#if !os(macOS)
-                    .navigationBarTitleDisplayMode(.automatic)
-#endif
+                    .padding(.vertical, 10)
+                    NavigationLink {
+                        CategoryViewer()
+                    } label: {
+                        Text("Categories")
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .frame(width: 210, height: 70)
+                            .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
+                            .backgroundStyle(colorScheme == .dark ? .gray : .blue)
+                    }
                 }
+                .navigationTitle("Welcome")
+#if !os(macOS)
+                .navigationBarTitleDisplayMode(.automatic)
+#endif
             }
         } detail: {
             Text("Nothing to see here yet...")

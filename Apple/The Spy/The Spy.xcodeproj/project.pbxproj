@@ -17,6 +17,7 @@
 		846A1D2C2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */; };
 		846A1D392BEB6A1900BCF715 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D382BEB6A1900BCF715 /* GameConfig.swift */; };
 		84747E0F2BECDA690082FBBF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84747E0E2BECDA690082FBBF /* GameView.swift */; };
+		84DFCF912C1CD07500AA83AA /* CategoryViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		846A1D382BEB6A1900BCF715 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
 		84747E0E2BECDA690082FBBF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				846A1D142BEB636800BCF715 /* Preview Content */,
 				840932142BEB6D9900550066 /* RoleViewer.swift */,
 				84747E0E2BECDA690082FBBF /* GameView.swift */,
+				84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */,
 			);
 			path = "The Spy";
 			sourceTree = "<group>";
@@ -202,7 +205,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					846A1D072BEB636600BCF715 = {
 						CreatedOnToolsVersion = 15.3;
@@ -271,6 +274,7 @@
 				846A1D0E2BEB636600BCF715 /* ContentView.swift in Sources */,
 				846A1D392BEB6A1900BCF715 /* GameConfig.swift in Sources */,
 				846A1D0C2BEB636600BCF715 /* The_SpyApp.swift in Sources */,
+				84DFCF912C1CD07500AA83AA /* CategoryViewer.swift in Sources */,
 				840932152BEB6D9900550066 /* RoleViewer.swift in Sources */,
 				84747E0F2BECDA690082FBBF /* GameView.swift in Sources */,
 			);
@@ -343,6 +347,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -404,6 +409,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -431,6 +437,7 @@
 				CODE_SIGN_ENTITLEMENTS = "The Spy/The_Spy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
 				DEVELOPMENT_TEAM = Q87UDX5898;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -471,6 +478,7 @@
 				CODE_SIGN_ENTITLEMENTS = "The Spy/The_Spy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
 				DEVELOPMENT_TEAM = Q87UDX5898;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -510,6 +518,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q87UDX5898;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
@@ -533,6 +542,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q87UDX5898;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
@@ -555,6 +565,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q87UDX5898;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
@@ -577,6 +588,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q87UDX5898;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;

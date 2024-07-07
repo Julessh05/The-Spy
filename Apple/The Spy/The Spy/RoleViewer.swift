@@ -57,6 +57,10 @@ internal struct RoleViewer: View {
                 }
             }
         }
+        .padding(10)
+        .frame(width: 350, height: 500)
+        .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
+        .backgroundStyle(.orange)
         .onAppear {
             for _ in 1...numberSpies {
                 var rm = Int.random(in: 1...numberPlayer)

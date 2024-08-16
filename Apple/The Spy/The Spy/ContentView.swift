@@ -14,14 +14,27 @@ internal struct ContentView: View {
     
     @State private var gameRunning : Bool = false
     
+    @State private var rolesShowing : Bool = false
+    
+    @State private var numberPlayer : String = ""
+    
+    @State private var numberSpies : String = ""
+    
+    @State private var configAlertShown : Bool = false
+    
     var body: some View {
         NavigationSplitView {
             if gameRunning {
                 GameView(gameRunning: $gameRunning)
+                    .onAppear {
+                        rolesShowing = false
+                    }
+            } else if rolesShowing {
+                RoleViewer(numberPlayer: Int(numberPlayer)!, numberSpies: Int(numberSpies)!, gameRunning: $gameRunning)
             } else {
                 VStack {
-                    NavigationLink {
-                        GameConfig(gameRunning: $gameRunning)
+                    Button {
+                        configAlertShown.toggle()
                     } label: {
                         Text("New Game")
                             .foregroundStyle(colorScheme == .dark ? .white : .black)
@@ -44,6 +57,17 @@ internal struct ContentView: View {
 #if !os(macOS)
                 .navigationBarTitleDisplayMode(.automatic)
 #endif
+                .alert("New Game", isPresented: $configAlertShown) {
+                    TextField("Number Player", text: $numberPlayer)
+                    TextField("Number Spies", text: $numberSpies)
+                    Button("Ok") {
+                        rolesShowing.toggle()
+                    }
+                    .disabled(numberSpies >= numberPlayer || numberSpies.isEmpty || numberPlayer.isEmpty)
+                }
+                .textFieldStyle(.automatic)
+                .textCase(.none)
+                .keyboardType(.numberPad)
             }
         } detail: {
             Text("Nothing to see here yet...")

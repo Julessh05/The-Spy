@@ -48,21 +48,34 @@ internal struct RoleViewer: View {
         Button {
             btnTap()
         } label: {
-            if playerCounter > numberPlayer {
-              Text("Tap to start")
-            } else if hidden {
-                Text("Tap to show")
-            } else {
-                VStack {
-                    Text(textToShow)
-                    Text("Tap to hide again")
+            VStack {
+                if !(playerCounter > numberPlayer) {
+                    Text("Player \(playerCounter)")
+                        .padding(.top, 20)
+                } else {
+                    EmptyView().padding(.top, 20)
                 }
+                Spacer()
+                Group {
+                    if playerCounter > numberPlayer {
+                        Text("Tap to start")
+                    } else if hidden {
+                        Text("Tap to show")
+                    } else {
+                        VStack {
+                            Text(textToShow)
+                            Text("Tap to hide again")
+                        }
+                    }
+                }
+                .padding(.bottom, 20)
+                Spacer()
             }
         }
         .padding(10)
         .frame(width: 350, height: 500)
         .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
-        .backgroundStyle(.orange)
+        .backgroundStyle(spyNumbers.contains(playerCounter) && !hidden ? .red : .orange)
         .onAppear {
             for _ in 1...numberSpies {
                 var rm = Int.random(in: 1...numberPlayer)

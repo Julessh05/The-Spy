@@ -24,7 +24,7 @@ internal struct RoleViewer: View {
             let category = json.randomElement()!
             word = category.value.randomElement()!
         } catch {
-            // TODO: handle error
+            loadingErrorPresented.toggle()
         }
     }
     
@@ -41,6 +41,8 @@ internal struct RoleViewer: View {
     @State private var spyNumbers : [Int]
     
     @State private var textToShow : String = ""
+    
+    @State private var loadingErrorPresented : Bool = false
     
     var body: some View {
         Button {
@@ -75,6 +77,11 @@ internal struct RoleViewer: View {
         .navigationBarTitleDisplayMode(.automatic)
 #endif
         .foregroundStyle(.primary)
+        .alert("Loading error", isPresented: $loadingErrorPresented) {
+            
+        } message: {
+            Text("An error occured while loading the words.\nPlease try again.")
+        }
     }
     
     private func btnTap() -> Void {

@@ -17,8 +17,12 @@ internal struct GameConfig: View {
     
     var body: some View {
         VStack {
-            TextField("Number of Players", text: $numberPlayer, prompt: Text("How many peolpe are playing?"))
-            TextField("Number of Spies", text: $numberSpies, prompt: Text("How many spies should be there?"))
+            Section("Player") {
+                TextField("Number of Players", text: $numberPlayer, prompt: Text("How many peolpe are playing?"))
+            }
+            Section("Spies") {
+                TextField("Number of Spies", text: $numberSpies, prompt: Text("How many spies should be there?"))
+            }
             NavigationLink("Start") {
                 if !numberSpies.isEmpty && !numberPlayer.isEmpty {
                     RoleViewer(

@@ -4,6 +4,8 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.jetbrainsCompose) apply false
+    alias(libs.plugins.compose.compiler) apply false
 }
 
 // Load Keystore for signing Config
@@ -27,8 +29,8 @@ android {
 
     defaultConfig {
         applicationId = "dev.jules.thespy"
-        minSdk = 31
-        targetSdk = 34
+        minSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 

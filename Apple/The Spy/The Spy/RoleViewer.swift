@@ -20,7 +20,9 @@ internal struct RoleViewer: View {
         word = "Loaded Word"
         spyNumbers = []
         do {
-            let json = try JSONSerialization.jsonObject(with: NSDataAsset(name: "Words")!.data, options: [.topLevelDictionaryAssumed]) as! [String : [String]]
+            let path = Bundle.main.path(forResource: "words", ofType: "json")
+            let data = try Data(contentsOf: URL(filePath: path!), options: .mappedIfSafe)
+            let json = try JSONSerialization.jsonObject(with: data, options: .topLevelDictionaryAssumed) as! [String : [String]]
             let category = json.randomElement()!
             word = category.value.randomElement()!
         } catch {
@@ -104,7 +106,7 @@ internal struct RoleViewer: View {
             return
         }
         if spyNumbers.contains(playerCounter) {
-            textToShow = "You're a Spy"
+            textToShow = String(localized: "You're a Spy")
         } else if playerCounter > numberPlayer {
             gameRunning.wrappedValue = true
             dismiss()

@@ -20,7 +20,7 @@ internal struct ContentView: View {
     
     @State private var numberSpies : String = ""
     
-    @State private var configAlertShown : Bool = false
+    @State private var configSheetShown : Bool = false
     
     var body: some View {
         NavigationSplitView {
@@ -28,13 +28,15 @@ internal struct ContentView: View {
                 GameView(gameRunning: $gameRunning)
                     .onAppear {
                         rolesShowing = false
+                        numberSpies = ""
+                        numberPlayer = ""
                     }
             } else if rolesShowing {
                 RoleViewer(numberPlayer: Int(numberPlayer)!, numberSpies: Int(numberSpies)!, gameRunning: $gameRunning)
             } else {
                 VStack {
                     Button {
-                        configAlertShown.toggle()
+                        configSheetShown.toggle()
                     } label: {
                         Text("New Game")
                             .foregroundStyle(colorScheme == .dark ? .white : .black)
@@ -42,7 +44,6 @@ internal struct ContentView: View {
                             .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
                             .backgroundStyle(colorScheme == .dark ? .gray : .blue)
                     }
-                    .padding(.vertical, 10)
                     NavigationLink {
                         CategoryViewer()
                     } label: {
@@ -52,18 +53,45 @@ internal struct ContentView: View {
                             .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
                             .backgroundStyle(colorScheme == .dark ? .gray : .blue)
                     }
+                    .padding(.vertical, 10)
+//                    NavigationLink {
+//                        Configuration()
+//                    } label: {
+//                        Text("Further Config")
+//                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+//                            .frame(width: 210, height: 70)
+//                            .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
+//                            .backgroundStyle(colorScheme == .dark ? .gray : .blue)
+//                    }
                 }
                 .navigationTitle("Welcome")
 #if !os(macOS)
                 .navigationBarTitleDisplayMode(.automatic)
 #endif
-                .alert("New Game", isPresented: $configAlertShown) {
-                    TextField("Number Player", text: $numberPlayer)
-                    TextField("Number Spies", text: $numberSpies)
-                    Button("Ok") {
-                        rolesShowing.toggle()
+                .sheet(isPresented: $configSheetShown) {
+                    NavigationStack {
+                        Form {
+                            TextField("Number Player", text: $numberPlayer)
+                            TextField("Number Spies", text: $numberSpies)
+                        }
+                        .navigationTitle("New Game")
+                        .toolbarRole(.automatic)
+                        .toolbar(.automatic, for: .automatic)
+                        .toolbar {
+                            ToolbarItem(placement: .primaryAction) {
+                                Button("Ok") {
+                                    rolesShowing.toggle()
+                                    configSheetShown.toggle()
+                                }
+                                .disabled(Int(numberSpies) ?? 0 >= Int(numberPlayer) ?? 0 || numberSpies.isEmpty || numberPlayer.isEmpty)
+                            }
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel", role: .cancel) {
+                                    configSheetShown.toggle()
+                                }
+                            }
+                        }
                     }
-                    .disabled(numberSpies >= numberPlayer || numberSpies.isEmpty || numberPlayer.isEmpty)
                 }
                 .textFieldStyle(.automatic)
                 .textCase(.none)

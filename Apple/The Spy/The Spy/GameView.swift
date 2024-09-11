@@ -45,7 +45,7 @@ internal struct GameView: View {
             Button {
                 minutes += 1
             } label: {
-                Text("Add 1 minute")
+                Label("1 minute", systemImage: "plus")
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
                     .frame(width: 210, height: 70)
                     .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))

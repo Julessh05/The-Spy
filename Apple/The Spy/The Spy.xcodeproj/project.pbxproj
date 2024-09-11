@@ -16,7 +16,10 @@
 		846A1D2A2BEB636800BCF715 /* The_SpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D292BEB636800BCF715 /* The_SpyUITests.swift */; };
 		846A1D2C2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */; };
 		84747E0F2BECDA690082FBBF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84747E0E2BECDA690082FBBF /* GameView.swift */; };
+		84889ED62C8DE4160066F7CB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 84889ED52C8DE4160066F7CB /* Localizable.xcstrings */; };
+		84B97C192C8F2905005F2C81 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 84B97C182C8F2905005F2C81 /* words.json */; };
 		84DFCF912C1CD07500AA83AA /* CategoryViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */; };
+		84EE5E722C8C3BD200E70551 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE5E712C8C3BD200E70551 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,12 @@
 		846A1D292BEB636800BCF715 /* The_SpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITests.swift; sourceTree = "<group>"; };
 		846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84747E0E2BECDA690082FBBF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		84889ED52C8DE4160066F7CB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		84B97C172C8F2905005F2C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/words.json; sourceTree = "<group>"; };
+		84B97C1A2C8F2908005F2C81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/words.json; sourceTree = "<group>"; };
+		84B97C1B2C8F2909005F2C81 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/words.json; sourceTree = "<group>"; };
 		84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewer.swift; sourceTree = "<group>"; };
+		84EE5E712C8C3BD200E70551 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,8 @@
 		846A1CFF2BEB636600BCF715 = {
 			isa = PBXGroup;
 			children = (
+				84B97C182C8F2905005F2C81 /* words.json */,
+				84889ED52C8DE4160066F7CB /* Localizable.xcstrings */,
 				846A1D0A2BEB636600BCF715 /* The Spy */,
 				846A1D1E2BEB636800BCF715 /* The SpyTests */,
 				846A1D282BEB636800BCF715 /* The SpyUITests */,
@@ -109,6 +119,7 @@
 				840932142BEB6D9900550066 /* RoleViewer.swift */,
 				84747E0E2BECDA690082FBBF /* GameView.swift */,
 				84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */,
+				84EE5E712C8C3BD200E70551 /* Configuration.swift */,
 			);
 			path = "The Spy";
 			sourceTree = "<group>";
@@ -224,6 +235,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 846A1CFF2BEB636600BCF715;
 			productRefGroup = 846A1D092BEB636600BCF715 /* Products */;
@@ -243,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				846A1D162BEB636800BCF715 /* Preview Assets.xcassets in Resources */,
+				84B97C192C8F2905005F2C81 /* words.json in Resources */,
 				846A1D122BEB636800BCF715 /* Assets.xcassets in Resources */,
+				84889ED62C8DE4160066F7CB /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EE5E722C8C3BD200E70551 /* Configuration.swift in Sources */,
 				846A1D0E2BEB636600BCF715 /* ContentView.swift in Sources */,
 				846A1D0C2BEB636600BCF715 /* The_SpyApp.swift in Sources */,
 				84DFCF912C1CD07500AA83AA /* CategoryViewer.swift in Sources */,
@@ -307,6 +322,19 @@
 			targetProxy = 846A1D262BEB636800BCF715 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84B97C182C8F2905005F2C81 /* words.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B97C172C8F2905005F2C81 /* Base */,
+				84B97C1A2C8F2908005F2C81 /* en */,
+				84B97C1B2C8F2909005F2C81 /* de */,
+			);
+			name = words.json;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		846A1D2D2BEB636800BCF715 /* Debug */ = {
@@ -432,7 +460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "The Spy/The_Spy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
 				DEVELOPMENT_TEAM = Q87UDX5898;
@@ -455,7 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.the-spy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -473,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "The Spy/The_Spy.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
 				DEVELOPMENT_TEAM = Q87UDX5898;
@@ -496,7 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.the-spy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

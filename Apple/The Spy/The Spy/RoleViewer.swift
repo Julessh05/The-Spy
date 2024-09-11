@@ -20,11 +20,13 @@ internal struct RoleViewer: View {
         word = "Loaded Word"
         spyNumbers = []
         do {
-            let json = try JSONSerialization.jsonObject(with: NSDataAsset(name: "Words")!.data, options: [.topLevelDictionaryAssumed]) as! [String : [String]]
+            let path = Bundle.main.path(forResource: "words", ofType: "json")
+            let data = try Data(contentsOf: URL(filePath: path!), options: .mappedIfSafe)
+            let json = try JSONSerialization.jsonObject(with: data, options: .topLevelDictionaryAssumed) as! [String : [String]]
             let category = json.randomElement()!
             word = category.value.randomElement()!
         } catch {
-            // TODO: handle error
+            loadingErrorPresented.toggle()
         }
     }
     
@@ -42,21 +44,40 @@ internal struct RoleViewer: View {
     
     @State private var textToShow : String = ""
     
+    @State private var loadingErrorPresented : Bool = false
+    
     var body: some View {
         Button {
             btnTap()
         } label: {
-            if playerCounter > numberPlayer {
-              Text("Tap to start")
-            } else if hidden {
-                Text("Tap to show")
-            } else {
-                VStack {
-                    Text(textToShow)
-                    Text("Tap to hide again")
+            VStack {
+                if !(playerCounter > numberPlayer) {
+                    Text("Player \(playerCounter)")
+                        .padding(.top, 20)
+                } else {
+                    EmptyView().padding(.top, 20)
                 }
+                Spacer()
+                Group {
+                    if playerCounter > numberPlayer {
+                        Text("Tap to start")
+                    } else if hidden {
+                        Text("Tap to show")
+                    } else {
+                        VStack {
+                            Text(textToShow)
+                            Text("Tap to hide again")
+                        }
+                    }
+                }
+                .padding(.bottom, 20)
+                Spacer()
             }
         }
+        .padding(10)
+        .frame(width: 350, height: 500)
+        .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
+        .backgroundStyle(spyNumbers.contains(playerCounter) && !hidden ? .red : .orange)
         .onAppear {
             for _ in 1...numberSpies {
                 var rm = Int.random(in: 1...numberPlayer)
@@ -71,6 +92,11 @@ internal struct RoleViewer: View {
         .navigationBarTitleDisplayMode(.automatic)
 #endif
         .foregroundStyle(.primary)
+        .alert("Loading error", isPresented: $loadingErrorPresented) {
+            
+        } message: {
+            Text("An error occured while loading the words.\nPlease try again.")
+        }
     }
     
     private func btnTap() -> Void {
@@ -80,7 +106,7 @@ internal struct RoleViewer: View {
             return
         }
         if spyNumbers.contains(playerCounter) {
-            textToShow = "You're a Spy"
+            textToShow = String(localized: "You're a Spy")
         } else if playerCounter > numberPlayer {
             gameRunning.wrappedValue = true
             dismiss()

@@ -9,6 +9,8 @@ import SwiftUI
 
 internal struct GameView: View {
     
+    @Environment(\.colorScheme) private var colorScheme
+    
     @Binding internal var gameRunning : Bool
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -22,20 +24,35 @@ internal struct GameView: View {
     var body: some View {
         VStack {
             Text("Time remaining:")
+                .font(.title3)
             // From: https://stackoverflow.com/questions/32338137/padding-a-swift-string-for-printing
             // Answer used for this (without extension): https://stackoverflow.com/a/69859859
             Text("\(String(String(minutes).padding(toLength: 2, withPad: "0", startingAt: 0).reversed())):\(String(String(String(seconds).reversed()).padding(toLength: 2, withPad: "0", startingAt: 0).reversed()))")
-            Button("Done") {
+                .font(.title)
+                .padding(12)
+            Button {
                 gameRunning.toggle()
                 timer.upstream.connect().cancel()
+            } label: {
+                Text("Done")
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+                    .frame(width: 210, height: 70)
+                    .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
+                    .backgroundStyle(colorScheme == .dark ? .gray : .blue)
             }
             .padding(.top, 8)
             .padding(.bottom, 2)
             Button {
                 minutes += 1
             } label: {
-                Label("1 Minute", systemImage: "plus")
+                Label("1 minute", systemImage: "plus")
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+                    .frame(width: 210, height: 70)
+                    .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
+                    .backgroundStyle(colorScheme == .dark ? .gray : .blue)
             }
+            .padding(.top, 8)
+            .padding(.bottom, 2)
         }
         .alert("Game Over", isPresented: $gameOverDialog) {
             Button("Ok") {

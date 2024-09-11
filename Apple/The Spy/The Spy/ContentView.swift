@@ -10,6 +10,10 @@ import SwiftData
 
 internal struct ContentView: View {
     
+    @Query private var configs : [Configuration]
+    
+    @Environment(\.modelContext) private var modelContext
+    
     @Environment(\.colorScheme) private var colorScheme
     
     @State private var gameRunning : Bool = false
@@ -54,15 +58,15 @@ internal struct ContentView: View {
                             .backgroundStyle(colorScheme == .dark ? .gray : .blue)
                     }
                     .padding(.vertical, 10)
-//                    NavigationLink {
-//                        Configuration()
-//                    } label: {
-//                        Text("Further Config")
-//                            .foregroundStyle(colorScheme == .dark ? .white : .black)
-//                            .frame(width: 210, height: 70)
-//                            .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
-//                            .backgroundStyle(colorScheme == .dark ? .gray : .blue)
-//                    }
+                    NavigationLink {
+                        ConfigView()
+                    } label: {
+                        Text("Further Configuration")
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .frame(width: 210, height: 70)
+                            .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
+                            .backgroundStyle(colorScheme == .dark ? .gray : .blue)
+                    }
                 }
                 .navigationTitle("Welcome")
 #if !os(macOS)
@@ -71,8 +75,22 @@ internal struct ContentView: View {
                 .sheet(isPresented: $configSheetShown) {
                     NavigationStack {
                         Form {
-                            TextField("Number Player", text: $numberPlayer)
-                            TextField("Number Spies", text: $numberSpies)
+                            Section {
+                                TextField("Number Player", text: $numberPlayer)
+                            } header: {
+                                Text("Player")
+                            } footer: {
+                                Text("Enter the number of total players in this game")
+                            }
+                            Section {
+                                TextField("Number Spies", text: $numberSpies)
+                            } header: {
+                                Text("Spies")
+                            } footer: {
+                                VStack {
+                                    Text("Enter the number of spies among the player\nThe number of spies must be smaller than the number of total players")
+                                }
+                            }
                         }
                         .navigationTitle("New Game")
                         .toolbarRole(.automatic)
@@ -100,9 +118,33 @@ internal struct ContentView: View {
         } detail: {
             Text("Nothing to see here yet...")
         }
+        .onAppear {
+            if configs.isEmpty {
+                let config = Configuration()
+                modelContext.insert(config)
+            } else if configs.count > 1 {
+                print("More than one config model")
+            }
+        }
     }
 }
 
+
+
 #Preview {
     ContentView()
+        .modelContainer(previewModelContainer)
 }
+
+private var previewModelContainer: ModelContainer = {
+    let schema = Schema([
+        Configuration.self
+    ])
+    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+    
+    do {
+        return try ModelContainer(for: schema, configurations: [modelConfiguration])
+    } catch {
+        fatalError("Could not create ModelContainer: \(error)")
+    }
+}()

@@ -2,19 +2,18 @@
 //  Configuration.swift
 //  The Spy
 //
-//  Created by Julian Schumacher on 07.09.24.
+//  Created by Julian Schumacher on 11.09.24.
 //
 
-import SwiftUI
+import Foundation
+import SwiftData
 
-internal struct Configuration: View {
-    var body: some View {
-        List {
-            
-        }
+@Model
+internal class Configuration {
+    
+    @Attribute(.unique) internal var unselectedCategories : [String]
+    
+    internal init(selectedCategories: [String] = []) {
+        self.unselectedCategories = selectedCategories
     }
-}
-
-#Preview {
-    Configuration()
 }

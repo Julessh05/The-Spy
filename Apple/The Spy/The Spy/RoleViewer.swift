@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 internal struct RoleViewer: View {
+    
+    @Query private var configs : [Configuration]
     
     private var gameRunning : Binding<Bool>
     
@@ -19,15 +22,6 @@ internal struct RoleViewer: View {
         self.numberSpies = numberSpies
         word = "Loaded Word"
         spyNumbers = []
-        do {
-            let path = Bundle.main.path(forResource: "words", ofType: "json")
-            let data = try Data(contentsOf: URL(filePath: path!), options: .mappedIfSafe)
-            let json = try JSONSerialization.jsonObject(with: data, options: .topLevelDictionaryAssumed) as! [String : [String]]
-            let category = json.randomElement()!
-            word = category.value.randomElement()!
-        } catch {
-            loadingErrorPresented.toggle()
-        }
     }
     
     @State private var hidden : Bool = true
@@ -36,7 +30,7 @@ internal struct RoleViewer: View {
     
     private let numberSpies : Int
     
-    private var word : String
+    @State private var word : String
     
     @State private var playerCounter : Int = 1
     
@@ -79,6 +73,18 @@ internal struct RoleViewer: View {
         .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
         .backgroundStyle(spyNumbers.contains(playerCounter) && !hidden ? .red : .orange)
         .onAppear {
+            do {
+                let path = Bundle.main.path(forResource: "words", ofType: "json")
+                let data = try Data(contentsOf: URL(filePath: path!), options: .mappedIfSafe)
+                var json = try JSONSerialization.jsonObject(with: data, options: .topLevelDictionaryAssumed) as! [String : [String]]
+                for category in configs.first!.unselectedCategories {
+                    json.removeValue(forKey: category)
+                }
+                let category = json.randomElement()!
+                word = category.value.randomElement()!
+            } catch {
+                loadingErrorPresented.toggle()
+            }
             for _ in 1...numberSpies {
                 var rm = Int.random(in: 1...numberPlayer)
                 while spyNumbers.contains(rm) {
@@ -120,7 +126,21 @@ internal struct RoleViewer: View {
 internal struct RoleViewerPreview : PreviewProvider {
     @State internal static var gameRunning : Bool = false
     
+    private static var previewModelContainer: ModelContainer = {
+        let schema = Schema([
+            Configuration.self
+        ])
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
+    
     static var previews: some View {
         RoleViewer(numberPlayer: 4, numberSpies: 1, gameRunning: $gameRunning)
+            .modelContainer(previewModelContainer)
     }
 }

@@ -57,8 +57,7 @@
 		84889ED52C8DE4160066F7CB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		849CB30E2C91F2A700F70594 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		849CB3102C91F2AF00F70594 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
-		84B97C172C8F2905005F2C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/words.json; sourceTree = "<group>"; };
-		84B97C1A2C8F2908005F2C81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/words.json; sourceTree = "<group>"; };
+		849CB3122C92298300F70594 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/words.json; sourceTree = "<group>"; };
 		84B97C1B2C8F2909005F2C81 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/words.json; sourceTree = "<group>"; };
 		84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,7 +236,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				de,
 			);
 			mainGroup = 846A1CFF2BEB636600BCF715;
@@ -331,9 +329,8 @@
 		84B97C182C8F2905005F2C81 /* words.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84B97C172C8F2905005F2C81 /* Base */,
-				84B97C1A2C8F2908005F2C81 /* en */,
 				84B97C1B2C8F2909005F2C81 /* de */,
+				849CB3122C92298300F70594 /* en */,
 			);
 			name = words.json;
 			sourceTree = "<group>";

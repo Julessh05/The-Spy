@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import GameKit
 
 internal struct ContentView: View {
     
@@ -25,6 +26,8 @@ internal struct ContentView: View {
     @State private var numberSpies : String = ""
     
     @State private var configSheetShown : Bool = false
+    
+    private var viewController : UIViewController?
     
     var body: some View {
         NavigationSplitView {
@@ -124,6 +127,34 @@ internal struct ContentView: View {
                 modelContext.insert(config)
             } else if configs.count > 1 {
                 print("More than one config model")
+            }
+            authenticateUser()
+        }
+        .onChange(of: gameRunning) {
+            guard !gameRunning else { return }
+            GKAchievement.loadAchievements {
+                achievements, error in
+                let firstGameID = "first_game"
+                guard !(achievements?.contains(where: { $0.identifier == firstGameID }) ?? true) else { return }
+                let achievement = GKAchievement(identifier: firstGameID)
+                achievement.percentComplete = 100
+                let achievementsToReport : [GKAchievement] = [achievement]
+                GKAchievement.report(achievementsToReport)
+            }
+        }
+    }
+    
+    //https://www.asushil.com.np/setting-up-game-center-authentication-in-swiftui-a-comprehensive-guide/
+    /// Authenticates the User in the Game Center
+    private func authenticateUser() -> Void {
+        GKLocalPlayer.local.authenticateHandler = {
+            vc, error  in
+            guard !GKLocalPlayer.local.isAuthenticated else { return }
+            if let view = vc {
+                viewController?.present(view, animated: true)
+            }
+            if let e = error {
+                print(e)
             }
         }
     }

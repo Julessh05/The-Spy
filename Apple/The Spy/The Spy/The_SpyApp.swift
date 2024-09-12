@@ -22,6 +22,10 @@ struct The_SpyApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    internal init() {
+        SettingsHandler.loadSettings()
+    }
 
     var body: some Scene {
         WindowGroup {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GameKit
 
 internal struct GameView: View {
     

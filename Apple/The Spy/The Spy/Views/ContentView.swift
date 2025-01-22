@@ -42,11 +42,12 @@ internal struct ContentView: View {
                 RoleViewer(numberPlayer: Int(numberPlayer)!, numberSpies: Int(numberSpies)!, gameRunning: $gameRunning)
             } else {
                 VStack {
+                    // TODO: change Font color to white
                     Button {
                         configSheetShown.toggle()
                     } label: {
                         Text("New Game")
-                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .foregroundStyle(.white)
                             .frame(width: 210, height: 70)
                             .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
                             .backgroundStyle(colorScheme == .dark ? .gray : .blue)
@@ -55,7 +56,7 @@ internal struct ContentView: View {
                         CategoryViewer()
                     } label: {
                         Text("Categories")
-                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .foregroundStyle(.white)
                             .frame(width: 210, height: 70)
                             .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
                             .backgroundStyle(colorScheme == .dark ? .gray : .blue)
@@ -65,7 +66,7 @@ internal struct ContentView: View {
                         ConfigView()
                     } label: {
                         Text("Further Configuration")
-                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            .foregroundStyle(.white)
                             .frame(width: 210, height: 70)
                             .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
                             .backgroundStyle(colorScheme == .dark ? .gray : .blue)
@@ -76,43 +77,11 @@ internal struct ContentView: View {
                 .navigationBarTitleDisplayMode(.automatic)
 #endif
                 .sheet(isPresented: $configSheetShown) {
-                    NavigationStack {
-                        Form {
-                            Section {
-                                TextField("Number Player", text: $numberPlayer)
-                            } header: {
-                                Text("Player")
-                            } footer: {
-                                Text("Enter the number of total players in this game")
-                            }
-                            Section {
-                                TextField("Number Spies", text: $numberSpies)
-                            } header: {
-                                Text("Spies")
-                            } footer: {
-                                VStack {
-                                    Text("Enter the number of spies among the player\nThe number of spies must be smaller than the number of total players")
-                                }
-                            }
-                        }
-                        .navigationTitle("New Game")
-                        .toolbarRole(.automatic)
-                        .toolbar(.automatic, for: .automatic)
-                        .toolbar {
-                            ToolbarItem(placement: .primaryAction) {
-                                Button("Ok") {
-                                    rolesShowing.toggle()
-                                    configSheetShown.toggle()
-                                }
-                                .disabled(Int(numberSpies) ?? 0 >= Int(numberPlayer) ?? 0 || numberSpies.isEmpty || numberPlayer.isEmpty)
-                            }
-                            ToolbarItem(placement: .cancellationAction) {
-                                Button("Cancel", role: .cancel) {
-                                    configSheetShown.toggle()
-                                }
-                            }
-                        }
-                    }
+                    ConfigSheet(
+                        numberPlayer: $numberPlayer,
+                        numberSpies: $numberSpies,
+                        rolesShowing: $rolesShowing
+                    )
                 }
                 .textFieldStyle(.automatic)
                 .textCase(.none)

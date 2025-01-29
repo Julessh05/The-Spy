@@ -12,7 +12,7 @@ import SwiftData
 struct The_SpyApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-//            Configuration.self
+            Configuration.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -22,11 +22,15 @@ struct The_SpyApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    internal init() {
+        SettingsHandler.loadSettings()
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-//        .modelContainer(sharedModelContainer)
+        .modelContainer(sharedModelContainer)
     }
 }

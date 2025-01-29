@@ -97,6 +97,38 @@
         }
       }
     },
+    "Enter the number of spies among the player\nThe number of spies must be smaller than the number of total players" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib die Anzahl der Spione unter den Spielern ein.\\nDie Anzahl der Spione muss kleiner sein als die Anzahl der Spieler"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the number of spies among the player\nThe number of spies must be smaller than the number of total players"
+          }
+        }
+      }
+    },
+    "Enter the number of total players in this game" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gib die Anzahl der gesamten Spielern in diesem Spiel ein"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the number of total players in this game"
+          }
+        }
+      }
+    },
     "Find the Spy!" : {
       "localizations" : {
         "de" : {
@@ -109,6 +141,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Find the Spy!"
+          }
+        }
+      }
+    },
+    "Further Configuration" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weitere Konfiguration"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Further Configuration"
           }
         }
       }
@@ -225,6 +273,38 @@
         }
       }
     },
+    "OK" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Player" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spieler"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Player"
+          }
+        }
+      }
+    },
     "Player %lld" : {
       "localizations" : {
         "de" : {
@@ -253,6 +333,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Roles"
+          }
+        }
+      }
+    },
+    "Spies" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spione"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spies"
           }
         }
       }

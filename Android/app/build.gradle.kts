@@ -4,8 +4,8 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.jetbrainsCompose) apply false
-    alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 // Load Keystore for signing Config
@@ -25,7 +25,7 @@ android {
         }
     }
     namespace = "dev.jules.thespy"
-    compileSdk = 34
+ compileSdk = 35
 
     defaultConfig {
         applicationId = "dev.jules.thespy"
@@ -74,7 +74,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    buildToolsVersion = "34.0.0"
+    buildToolsVersion = "35.0.0"
     ndkVersion = "27.0.11718014 rc1"
     dependenciesInfo {
         includeInApk = true

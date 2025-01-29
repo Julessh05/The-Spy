@@ -3,23 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		840932152BEB6D9900550066 /* RoleViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840932142BEB6D9900550066 /* RoleViewer.swift */; };
 		846A1D0C2BEB636600BCF715 /* The_SpyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D0B2BEB636600BCF715 /* The_SpyApp.swift */; };
-		846A1D0E2BEB636600BCF715 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D0D2BEB636600BCF715 /* ContentView.swift */; };
 		846A1D122BEB636800BCF715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846A1D112BEB636800BCF715 /* Assets.xcassets */; };
 		846A1D162BEB636800BCF715 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846A1D152BEB636800BCF715 /* Preview Assets.xcassets */; };
 		846A1D202BEB636800BCF715 /* The_SpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D1F2BEB636800BCF715 /* The_SpyTests.swift */; };
 		846A1D2A2BEB636800BCF715 /* The_SpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D292BEB636800BCF715 /* The_SpyUITests.swift */; };
 		846A1D2C2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */; };
-		84747E0F2BECDA690082FBBF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84747E0E2BECDA690082FBBF /* GameView.swift */; };
 		84889ED62C8DE4160066F7CB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 84889ED52C8DE4160066F7CB /* Localizable.xcstrings */; };
+		849CB30F2C91F2A700F70594 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849CB30E2C91F2A700F70594 /* Configuration.swift */; };
+		849CB3192C92E83000F70594 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 849CB3182C92E83000F70594 /* Settings.bundle */; };
+		849CB31B2C92E91200F70594 /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849CB31A2C92E91200F70594 /* SettingsHandler.swift */; };
 		84B97C192C8F2905005F2C81 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 84B97C182C8F2905005F2C81 /* words.json */; };
-		84DFCF912C1CD07500AA83AA /* CategoryViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */; };
-		84EE5E722C8C3BD200E70551 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE5E712C8C3BD200E70551 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		840932142BEB6D9900550066 /* RoleViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleViewer.swift; sourceTree = "<group>"; };
 		846A1D082BEB636600BCF715 /* The Spy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Spy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A1D0B2BEB636600BCF715 /* The_SpyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyApp.swift; sourceTree = "<group>"; };
-		846A1D0D2BEB636600BCF715 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		846A1D112BEB636800BCF715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846A1D132BEB636800BCF715 /* The_Spy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = The_Spy.entitlements; sourceTree = "<group>"; };
 		846A1D152BEB636800BCF715 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -52,14 +48,22 @@
 		846A1D252BEB636800BCF715 /* The SpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The SpyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		846A1D292BEB636800BCF715 /* The_SpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITests.swift; sourceTree = "<group>"; };
 		846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		84747E0E2BECDA690082FBBF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		84889ED52C8DE4160066F7CB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		84B97C172C8F2905005F2C81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/words.json; sourceTree = "<group>"; };
-		84B97C1A2C8F2908005F2C81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/words.json; sourceTree = "<group>"; };
+		849CB30E2C91F2A700F70594 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		849CB3122C92298300F70594 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/words.json; sourceTree = "<group>"; };
+		849CB3132C92DB7500F70594 /* The-Spy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "The-Spy-Info.plist"; sourceTree = SOURCE_ROOT; };
+		849CB3182C92E83000F70594 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		849CB31A2C92E91200F70594 /* SettingsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHandler.swift; sourceTree = "<group>"; };
 		84B97C1B2C8F2909005F2C81 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/words.json; sourceTree = "<group>"; };
-		84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewer.swift; sourceTree = "<group>"; };
-		84EE5E712C8C3BD200E70551 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8448E96E2D37D89C004AF42D /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		846A1D052BEB636600BCF715 /* Frameworks */ = {
@@ -89,6 +93,7 @@
 		846A1CFF2BEB636600BCF715 = {
 			isa = PBXGroup;
 			children = (
+				849CB3182C92E83000F70594 /* Settings.bundle */,
 				84B97C182C8F2905005F2C81 /* words.json */,
 				84889ED52C8DE4160066F7CB /* Localizable.xcstrings */,
 				846A1D0A2BEB636600BCF715 /* The Spy */,
@@ -111,15 +116,14 @@
 		846A1D0A2BEB636600BCF715 /* The Spy */ = {
 			isa = PBXGroup;
 			children = (
+				8448E96E2D37D89C004AF42D /* Views */,
+				849CB3132C92DB7500F70594 /* The-Spy-Info.plist */,
 				846A1D0B2BEB636600BCF715 /* The_SpyApp.swift */,
-				846A1D0D2BEB636600BCF715 /* ContentView.swift */,
 				846A1D112BEB636800BCF715 /* Assets.xcassets */,
 				846A1D132BEB636800BCF715 /* The_Spy.entitlements */,
 				846A1D142BEB636800BCF715 /* Preview Content */,
-				840932142BEB6D9900550066 /* RoleViewer.swift */,
-				84747E0E2BECDA690082FBBF /* GameView.swift */,
-				84DFCF902C1CD07500AA83AA /* CategoryViewer.swift */,
-				84EE5E712C8C3BD200E70551 /* Configuration.swift */,
+				849CB30E2C91F2A700F70594 /* Configuration.swift */,
+				849CB31A2C92E91200F70594 /* SettingsHandler.swift */,
 			);
 			path = "The Spy";
 			sourceTree = "<group>";
@@ -163,6 +167,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8448E96E2D37D89C004AF42D /* Views */,
 			);
 			name = "The Spy";
 			productName = "The Spy";
@@ -213,7 +220,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
+				ORGANIZATIONNAME = "Julian Schumacher";
 				TargetAttributes = {
 					846A1D072BEB636600BCF715 = {
 						CreatedOnToolsVersion = 15.3;
@@ -229,15 +237,15 @@
 				};
 			};
 			buildConfigurationList = 846A1D032BEB636600BCF715 /* Build configuration list for PBXProject "The Spy" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				de,
+				Base,
 			);
 			mainGroup = 846A1CFF2BEB636600BCF715;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 846A1D092BEB636600BCF715 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -256,6 +264,7 @@
 			files = (
 				846A1D162BEB636800BCF715 /* Preview Assets.xcassets in Resources */,
 				84B97C192C8F2905005F2C81 /* words.json in Resources */,
+				849CB3192C92E83000F70594 /* Settings.bundle in Resources */,
 				846A1D122BEB636800BCF715 /* Assets.xcassets in Resources */,
 				84889ED62C8DE4160066F7CB /* Localizable.xcstrings in Resources */,
 			);
@@ -282,12 +291,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84EE5E722C8C3BD200E70551 /* Configuration.swift in Sources */,
-				846A1D0E2BEB636600BCF715 /* ContentView.swift in Sources */,
+				849CB30F2C91F2A700F70594 /* Configuration.swift in Sources */,
 				846A1D0C2BEB636600BCF715 /* The_SpyApp.swift in Sources */,
-				84DFCF912C1CD07500AA83AA /* CategoryViewer.swift in Sources */,
-				840932152BEB6D9900550066 /* RoleViewer.swift in Sources */,
-				84747E0F2BECDA690082FBBF /* GameView.swift in Sources */,
+				849CB31B2C92E91200F70594 /* SettingsHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,9 +333,8 @@
 		84B97C182C8F2905005F2C81 /* words.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84B97C172C8F2905005F2C81 /* Base */,
-				84B97C1A2C8F2908005F2C81 /* en */,
 				84B97C1B2C8F2909005F2C81 /* de */,
+				849CB3122C92298300F70594 /* en */,
 			);
 			name = words.json;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -404,6 +410,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -467,6 +474,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "The-Spy-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "The Spy";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -475,15 +483,16 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.the-spy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -508,6 +517,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "The-Spy-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "The Spy";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -516,15 +526,16 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.the-spy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -538,7 +549,6 @@
 		846A1D332BEB636800BCF715 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -562,7 +572,6 @@
 		846A1D342BEB636800BCF715 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -586,7 +595,6 @@
 		846A1D362BEB636800BCF715 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -609,7 +617,6 @@
 		846A1D372BEB636800BCF715 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;

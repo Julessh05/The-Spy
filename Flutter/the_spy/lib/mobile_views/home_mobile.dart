@@ -39,6 +39,10 @@ final class HomeMobile extends StatelessWidget {
             onPressed: () {},
             child: Text("Categories".tr()),
           ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text("Further Configuration".tr()),
+          ),
         ],
       ),
     );

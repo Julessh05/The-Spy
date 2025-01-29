@@ -28,8 +28,8 @@ android {
         }
     }
     namespace "dev.jules.the_spy"
-    compileSdk 34
-    ndkVersion '26.2.11394342'
+compileSdk 35
+     ndkVersion '26.2.11394342'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -49,8 +49,8 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion
-        targetSdk 34
-        versionCode flutterVersionCode.toInteger()
+        targetSdk 35
+         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         signingConfig signingConfigs.release
         multiDexEnabled true
@@ -68,7 +68,7 @@ android {
             multiDexEnabled true
         }
     }
-    buildToolsVersion '34.0.0'
+    buildToolsVersion '35.0.1'
 }
 
 flutter {

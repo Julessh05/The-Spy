@@ -25,14 +25,14 @@ android {
         }
     }
     namespace = "dev.jules.thespy"
- compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "dev.jules.thespy"
         minSdk = 34
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 36
+        versionCode = 2
+        versionName = "2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

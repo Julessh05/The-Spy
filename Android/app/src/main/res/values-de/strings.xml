@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Der Spion</string>
+    <string name="welcome">Willkommen</string>
+    <string name="new_game">Neues Spiel</string>
+    <string name="categories">Kategorien</string>
+    <string name="further_configuration">Weitere Konfigurationen</string>
+    <string name="find_spy">Finde den Spion!</string>
+    <string name="time_remaining">Zeit verbleibend:</string>
+    <string name="plus_minute">+ 1 Minute</string>
+    <string name="done">Fertig</string>
+    <string name="number_player">Wie viele Spieler gibt es?</string>
+    <string name="number_spies">Wie viele Spione soll es geben?</string>
+    <string name="roles">Rollen</string>
+    <string name="youre_a_spy">Du bist ein Spion</string>
+    <string name="tap_to_show">Tippe um anzuzeigen</string>
+    <string name="tap_to_hide">Tippe um zu verstecken</string>
+    <string name="tap_to_hide_again">Tippe um wieder zu verstecken</string>
+    <string name="loading">Laden...</string>
+    <string name="tap_to_start">Tippe um zu starten</string>
+    <string name="player">Spieler</string>
+</resources>

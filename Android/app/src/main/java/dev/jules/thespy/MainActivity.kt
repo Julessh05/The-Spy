@@ -24,9 +24,12 @@ class MainActivity : ComponentActivity() {
                     startDestination = Routes.Welcome.name,
                 ) {
                     composable(Routes.Welcome.name) {
-                        Welcome {
-                            navController.navigate(Routes.Config.name)
-                        }
+                        Welcome(
+                            onNavigateNew = { navController.navigate(Routes.Config.name) },
+                            onNavigateCats = { navController.navigate(Routes.CategoryViewer.name) },
+                            onNavigateConfig = { navController.navigate(Routes.FurtherConfig.name) }
+
+                        )
                     }
                     composable(Routes.Config.name) {
                         GameConfig { numberPlayer, numberSpies ->

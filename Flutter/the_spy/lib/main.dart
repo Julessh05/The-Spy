@@ -8,6 +8,8 @@ import 'package:the_spy/mobile_views/game_mobile.dart';
 import 'package:the_spy/mobile_views/home_mobile.dart';
 import 'package:the_spy/routing/routes.dart';
 
+import 'mobile_views/category_viewer_mobile.dart';
+
 void main() {
   runApp(const SpyGame());
 }
@@ -59,6 +61,7 @@ final class _SpyGameState extends State<SpyGame> {
       routes: {
         Routes.home: (_) => const HomeMobile(),
         Routes.gameConfig: (_) => const GameConfigMobile(),
+        Routes.categories: (_) => const CategoryViewerMobile(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == Routes.game) {

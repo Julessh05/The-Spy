@@ -13,20 +13,20 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.res.stringResource
 
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview
 @Composable
 internal fun Welcome(
-    @PreviewParameter(OnNavigatePreviewProvider::class) onNavigate: () -> Unit
+    onNavigateNew: () -> Unit,
+    onNavigateCats: () -> Unit,
+    onNavigateConfig: () -> Unit
 ) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Welcome") })
+                title = { Text(stringResource(R.string.welcome)) })
         }
     ) {
         Column(
@@ -37,8 +37,14 @@ internal fun Welcome(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Button(onClick = { onNavigate() }) {
-                Text("New Game")
+            Button(onClick = { onNavigateNew() }) {
+                Text(stringResource(R.string.new_game))
+            }
+            Button(onClick = { onNavigateCats() }) {
+                Text(stringResource(R.string.categories))
+            }
+            Button(onClick = { onNavigateConfig() }) {
+                Text(stringResource(R.string.further_configuration))
             }
         }
     }

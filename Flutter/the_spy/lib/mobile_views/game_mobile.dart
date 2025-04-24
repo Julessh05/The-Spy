@@ -25,9 +25,11 @@ class _GameMobileState extends State<GameMobile> {
 
   String _cardText = "Tap to show";
 
-  String _word = "";
+  String _word = "Test Word";
 
   bool _hidden = true;
+
+  bool _loading = true;
 
   @override
   void initState() {
@@ -53,45 +55,51 @@ class _GameMobileState extends State<GameMobile> {
 
   Center get _body {
     final Size size = MediaQuery.of(context).size;
-    return Center(
-      child: GestureDetector(
-        onTap: () {
-          setState(() {
-            if (_hidden) {
-              if (_spyNumbers.contains(_playerCounter)) {
-                _cardText = "You're a spy";
+    if (_loading) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    } else {
+      return Center(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              if (_hidden) {
+                if (_spyNumbers.contains(_playerCounter)) {
+                  _cardText = "You're a spy";
+                } else {
+                  _cardText = _word;
+                }
+                _playerCounter++;
+                _hidden = false;
               } else {
-                _cardText = _word;
+                _cardText = "Tap to show";
+                _hidden = true;
               }
-              _playerCounter++;
-              _hidden = false;
-            } else {
-              _cardText = "Tap to show";
-              _hidden = true;
-            }
-          });
-        },
-        child: SizedBox(
-          height: size.height / 2,
-          width: size.width / 1.25,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Colors.black,
-                width: 2,
+            });
+          },
+          child: SizedBox(
+            height: size.height / 2,
+            width: size.width / 1.25,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.black,
+                  width: 2,
+                ),
               ),
+              position: DecorationPosition.background,
+              child: Center(child: Text(_cardText)),
             ),
-            position: DecorationPosition.background,
-            child: Center(child: Text(_cardText)),
           ),
         ),
-      ),
-    );
+      );
+    }
   }
 
-  void _loadWord() async {
+  Future<void> _loadWord() async {
     // TODO: change 10 to number of files
     final int categoryNumber = Random().nextInt(10);
     // Load File at the index of [category Number]
@@ -101,5 +109,8 @@ class _GameMobileState extends State<GameMobile> {
     jsonDecode(data);
     // Assign word to _word
     _word = "Loaded Word";
+    setState(() {
+      _loading = false;
+    });
   }
 }

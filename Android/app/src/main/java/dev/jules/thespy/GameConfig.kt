@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -37,7 +38,7 @@ fun GameConfig(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("New Game") })
+                title = { Text(stringResource(R.string.new_game)) })
         }
     ) { innerPadding ->
         Column(
@@ -53,7 +54,7 @@ fun GameConfig(
                 onValueChange = {
                     numberPlayer = it
                 },
-                label = { Text("How many player are there?") },
+                label = { Text(stringResource(R.string.number_player)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Number,
                     imeAction = ImeAction.Next,
@@ -64,7 +65,7 @@ fun GameConfig(
                 onValueChange = {
                     numberSpies = it
                 },
-                label = { Text("How many spies should be there?") },
+                label = { Text(stringResource(R.string.number_spies)) },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Number,
                     imeAction = ImeAction.Done,
@@ -75,7 +76,7 @@ fun GameConfig(
                 modifier = Modifier.padding(24.dp),
                 enabled = numberPlayer.isNotEmpty() && numberSpies.isNotEmpty() && numberPlayer > numberSpies && numberPlayer.isDigitsOnly() && numberSpies.isDigitsOnly()
             ) {
-                Text("Done")
+                Text(stringResource(R.string.done))
             }
         }
     }

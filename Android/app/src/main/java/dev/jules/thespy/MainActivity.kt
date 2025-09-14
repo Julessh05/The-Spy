@@ -31,6 +31,9 @@ class MainActivity : ComponentActivity() {
 
                         )
                     }
+                    composable(Routes.CategoryViewer.name) {
+                        CategoryViewer()
+                    }
                     composable(Routes.Config.name) {
                         GameConfig { numberPlayer, numberSpies ->
                             // https://stackoverflow.com/questions/65542751/multiple-arguments-with-jetpack-compose-navigation

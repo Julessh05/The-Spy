@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,29 +63,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		84A363592E76E62A002AC090 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		846A1D052BEB636600BCF715 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		846A1D182BEB636800BCF715 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		846A1D222BEB636800BCF715 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -116,6 +115,7 @@
 		846A1D0A2BEB636600BCF715 /* The Spy */ = {
 			isa = PBXGroup;
 			children = (
+				84A363592E76E62A002AC090 /* Models */,
 				8448E96E2D37D89C004AF42D /* Views */,
 				849CB3132C92DB7500F70594 /* The-Spy-Info.plist */,
 				846A1D0B2BEB636600BCF715 /* The_SpyApp.swift */,
@@ -166,10 +166,9 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			fileSystemSynchronizedGroups = (
 				8448E96E2D37D89C004AF42D /* Views */,
+				84A363592E76E62A002AC090 /* Models */,
 			);
 			name = "The Spy";
 			productName = "The Spy";
@@ -220,7 +219,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = "Julian Schumacher";
 				TargetAttributes = {
 					846A1D072BEB636600BCF715 = {
@@ -245,7 +244,7 @@
 				Base,
 			);
 			mainGroup = 846A1CFF2BEB636600BCF715;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 846A1D092BEB636600BCF715 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,7 +259,6 @@
 /* Begin PBXResourcesBuildPhase section */
 		846A1D062BEB636600BCF715 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				846A1D162BEB636800BCF715 /* Preview Assets.xcassets in Resources */,
 				84B97C192C8F2905005F2C81 /* words.json in Resources */,
@@ -268,51 +266,40 @@
 				846A1D122BEB636800BCF715 /* Assets.xcassets in Resources */,
 				84889ED62C8DE4160066F7CB /* Localizable.xcstrings in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		846A1D192BEB636800BCF715 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		846A1D232BEB636800BCF715 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		846A1D042BEB636600BCF715 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				849CB30F2C91F2A700F70594 /* Configuration.swift in Sources */,
 				846A1D0C2BEB636600BCF715 /* The_SpyApp.swift in Sources */,
 				849CB31B2C92E91200F70594 /* SettingsHandler.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		846A1D172BEB636800BCF715 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				846A1D202BEB636800BCF715 /* The_SpyTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		846A1D212BEB636800BCF715 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				846A1D2A2BEB636800BCF715 /* The_SpyUITests.swift in Sources */,
 				846A1D2C2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -342,7 +329,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		846A1D2D2BEB636800BCF715 /* Debug */ = {
+		846A1D2D2BEB636800BCF715 /* Debug configuration for PBXProject "The Spy" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -379,6 +366,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q87UDX5898;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -405,7 +393,7 @@
 			};
 			name = Debug;
 		};
-		846A1D2E2BEB636800BCF715 /* Release */ = {
+		846A1D2E2BEB636800BCF715 /* Release configuration for PBXProject "The Spy" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -442,6 +430,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q87UDX5898;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -460,7 +449,7 @@
 			};
 			name = Release;
 		};
-		846A1D302BEB636800BCF715 /* Debug */ = {
+		846A1D302BEB636800BCF715 /* Debug configuration for PBXNativeTarget "The Spy" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -470,7 +459,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
-				DEVELOPMENT_TEAM = Q87UDX5898;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -503,7 +491,7 @@
 			};
 			name = Debug;
 		};
-		846A1D312BEB636800BCF715 /* Release */ = {
+		846A1D312BEB636800BCF715 /* Release configuration for PBXNativeTarget "The Spy" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -513,7 +501,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
-				DEVELOPMENT_TEAM = Q87UDX5898;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -546,14 +533,13 @@
 			};
 			name = Release;
 		};
-		846A1D332BEB636800BCF715 /* Debug */ = {
+		846A1D332BEB636800BCF715 /* Debug configuration for PBXNativeTarget "The SpyTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = Q87UDX5898;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -569,14 +555,13 @@
 			};
 			name = Debug;
 		};
-		846A1D342BEB636800BCF715 /* Release */ = {
+		846A1D342BEB636800BCF715 /* Release configuration for PBXNativeTarget "The SpyTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = Q87UDX5898;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -592,13 +577,12 @@
 			};
 			name = Release;
 		};
-		846A1D362BEB636800BCF715 /* Debug */ = {
+		846A1D362BEB636800BCF715 /* Debug configuration for PBXNativeTarget "The SpyUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = Q87UDX5898;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -614,13 +598,12 @@
 			};
 			name = Debug;
 		};
-		846A1D372BEB636800BCF715 /* Release */ = {
+		846A1D372BEB636800BCF715 /* Release configuration for PBXNativeTarget "The SpyUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = Q87UDX5898;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -642,37 +625,33 @@
 		846A1D032BEB636600BCF715 /* Build configuration list for PBXProject "The Spy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				846A1D2D2BEB636800BCF715 /* Debug */,
-				846A1D2E2BEB636800BCF715 /* Release */,
+				846A1D2D2BEB636800BCF715 /* Debug configuration for PBXProject "The Spy" */,
+				846A1D2E2BEB636800BCF715 /* Release configuration for PBXProject "The Spy" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		846A1D2F2BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The Spy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				846A1D302BEB636800BCF715 /* Debug */,
-				846A1D312BEB636800BCF715 /* Release */,
+				846A1D302BEB636800BCF715 /* Debug configuration for PBXNativeTarget "The Spy" */,
+				846A1D312BEB636800BCF715 /* Release configuration for PBXNativeTarget "The Spy" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		846A1D322BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The SpyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				846A1D332BEB636800BCF715 /* Debug */,
-				846A1D342BEB636800BCF715 /* Release */,
+				846A1D332BEB636800BCF715 /* Debug configuration for PBXNativeTarget "The SpyTests" */,
+				846A1D342BEB636800BCF715 /* Release configuration for PBXNativeTarget "The SpyTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		846A1D352BEB636800BCF715 /* Build configuration list for PBXNativeTarget "The SpyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				846A1D362BEB636800BCF715 /* Debug */,
-				846A1D372BEB636800BCF715 /* Release */,
+				846A1D362BEB636800BCF715 /* Debug configuration for PBXNativeTarget "The SpyUITests" */,
+				846A1D372BEB636800BCF715 /* Release configuration for PBXNativeTarget "The SpyUITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

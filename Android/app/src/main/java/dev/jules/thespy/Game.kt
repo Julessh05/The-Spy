@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import kotlinx.coroutines.delay
@@ -32,7 +33,7 @@ internal fun Game(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Find the Spy!") })
+                title = { stringResource(R.string.find_spy) })
         }
     ) {
         Column(
@@ -62,13 +63,13 @@ internal fun Game(
                     }
                 }
             }
-            Text("Time remaining:")
+            Text(stringResource(R.string.time_remaining))
             Text("${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}")
             Button(onClick = { minutes++ }) {
-                Text("+ 1 Minute")
+                Text(stringResource(R.string.plus_minute))
             }
             Button(onClick = onNavigate) {
-                Text("Done")
+                Text(stringResource(R.string.done))
             }
         }
     }

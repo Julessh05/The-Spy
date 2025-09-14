@@ -1,12 +1,16 @@
 package dev.jules.thespy
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -18,10 +22,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.unit.dp
 import org.json.JSONObject
+import java.util.Locale
 import kotlin.random.Random
 
 
@@ -51,12 +59,14 @@ internal fun RoleViewer(
     numberPlayer: Int = 2,
     numberSpies: Int = 1
 ) {
+    val spyString = stringResource(R.string.youre_a_spy)
     var hidden by remember { mutableStateOf(true) }
     if (!wordLoaded) {
         init()
         numberPlayerGlobal = numberPlayer
+        val fileName = "words_${Locale.getDefault().language}.json"
         val stream =
-            LocalContext.current.assets.open("words.json").bufferedReader().use { it.readText() }
+            LocalContext.current.assets.open(fileName).bufferedReader().use { it.readText() }
         val jsObject = JSONObject(stream)
         val categories = jsObject.names()
         val categoryNumber = Random.nextInt(1, categories!!.length())
@@ -71,7 +81,7 @@ internal fun RoleViewer(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Roles") })
+                title = { Text(stringResource(R.string.roles)) })
         }
     ) {
         Column(
@@ -82,34 +92,49 @@ internal fun RoleViewer(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Box(Modifier.clickable {
-                if (!hidden) {
-                    hidden = true
-                    playerCounter += 1
-                } else {
-                    if (spyNumbers.contains(playerCounter)) {
-                        textToShow = "You're a spy"
-                    } else if (playerCounter > numberPlayerGlobal) {
-                        wordLoaded = false
-                        onNavigate()
-                    } else {
-                        textToShow = word
-                    }
-                    hidden = !hidden
-                }
-            }
+            val isSpy: Boolean = spyNumbers.contains(playerCounter)
+            val backgroundColor = if (isSpy) Color.Red else Color(0xFFFF9800)
+            Box(
+                modifier = Modifier
+                    .size(width = 250.dp, height = 400.dp)
+                    .background(
+                        color = backgroundColor,
+                        shape = RoundedCornerShape(16.dp)
+                    )
+                    .clickable {
+                        if (!hidden) {
+                            hidden = true
+                            playerCounter += 1
+                        } else {
+                            if (spyNumbers.contains(playerCounter)) {
+                                textToShow = spyString
+                            } else if (playerCounter > numberPlayerGlobal) {
+                                wordLoaded = false
+                                onNavigate()
+                            } else {
+                                textToShow = word
+                            }
+                            hidden = !hidden
+                        }
+                    },
+                contentAlignment = Alignment.Center
             ) {
-                Column {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text("${stringResource(R.string.player)} $playerCounter")
+                    Spacer(modifier = Modifier.size(150.dp))
                     if (hidden && playerCounter <= numberPlayerGlobal) {
-                        Text("Tap to show")
+                        Text(stringResource(R.string.tap_to_show))
                     } else if (hidden) {
-                        Text("Tap to start")
+                        Text(stringResource(R.string.tap_to_start))
                     } else if (playerCounter > numberPlayerGlobal) {
-                        Text("Loading...")
+                        Text(stringResource(R.string.loading))
                     } else {
                         Text(textToShow)
-                        Text("Tap to hide again")
+                        Text(stringResource(R.string.tap_to_hide_again))
                     }
+                    Spacer(modifier = Modifier.size(150.dp))
                 }
             }
         }

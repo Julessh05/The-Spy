@@ -29,6 +29,8 @@ internal struct ContentView: View {
     
     private var viewController : UIViewController?
     
+    @State private var players : [Player] = []
+    
     var body: some View {
         NavigationSplitView {
             if gameRunning {
@@ -39,18 +41,22 @@ internal struct ContentView: View {
                         numberPlayer = ""
                     }
             } else if rolesShowing {
-                RoleViewer(numberPlayer: Int(numberPlayer)!, numberSpies: Int(numberSpies)!, gameRunning: $gameRunning)
+                RoleViewer(
+                    numberPlayer: Int(numberPlayer)!,
+                    numberSpies: Int(numberSpies)!,
+                    gameRunning: $gameRunning,
+                    players: $players
+                )
             } else {
                 VStack {
-                    // TODO: change Font color to white
                     Button {
                         configSheetShown.toggle()
                     } label: {
                         Text("New Game")
                             .foregroundStyle(.white)
                             .frame(width: 210, height: 70)
-                            .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
-                            .backgroundStyle(colorScheme == .dark ? .gray : .blue)
+                            .backgroundStyle(.clear)
+                            .glassEffect(.clear, in: .rect(cornerRadius: 20))
                     }
                     NavigationLink {
                         CategoryViewer()
@@ -58,8 +64,8 @@ internal struct ContentView: View {
                         Text("Categories")
                             .foregroundStyle(.white)
                             .frame(width: 210, height: 70)
-                            .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
-                            .backgroundStyle(colorScheme == .dark ? .gray : .blue)
+                            .backgroundStyle(.clear)
+                            .glassEffect(.clear, in: .rect(cornerRadius: 20))
                     }
                     .padding(.vertical, 10)
                     NavigationLink {
@@ -68,11 +74,17 @@ internal struct ContentView: View {
                         Text("Further Configuration")
                             .foregroundStyle(.white)
                             .frame(width: 210, height: 70)
-                            .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
-                            .backgroundStyle(colorScheme == .dark ? .gray : .blue)
+                            .backgroundStyle(.clear)
+                            .glassEffect(.clear, in: .rect(cornerRadius: 20))
                     }
                 }
+                .background {
+                    Image("SpyBackground")
+                        .renderingMode(.original)
+                        .blur(radius: 10, opaque: true)
+                }
                 .navigationTitle("Welcome")
+                .toolbarColorScheme(.dark, for: .navigationBar)
 #if !os(macOS)
                 .navigationBarTitleDisplayMode(.automatic)
 #endif
@@ -80,7 +92,8 @@ internal struct ContentView: View {
                     ConfigSheet(
                         numberPlayer: $numberPlayer,
                         numberSpies: $numberSpies,
-                        rolesShowing: $rolesShowing
+                        rolesShowing: $rolesShowing,
+                        players: $players
                     )
                 }
                 .textFieldStyle(.automatic)

@@ -12,7 +12,8 @@ import SwiftData
 struct The_SpyApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Configuration.self
+            Configuration.self,
+            Player.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

@@ -16,12 +16,13 @@ internal struct RoleViewer: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    internal init(numberPlayer : Int, numberSpies : Int, gameRunning : Binding<Bool>) {
+    internal init(numberPlayer : Int, numberSpies : Int, gameRunning : Binding<Bool>, players : Binding<[Player]>) {
         self.gameRunning = gameRunning
         self.numberPlayer = numberPlayer
         self.numberSpies = numberSpies
         word = "Loaded Word"
         spyNumbers = []
+        self._players = players
     }
     
     @State private var hidden : Bool = true
@@ -32,7 +33,7 @@ internal struct RoleViewer: View {
     
     @State private var word : String
     
-    @State private var playerCounter : Int = 1
+    @State private var counter : Int = 1
     
     @State private var spyNumbers : [Int]
     
@@ -40,20 +41,29 @@ internal struct RoleViewer: View {
     
     @State private var loadingErrorPresented : Bool = false
     
+    @Binding internal var players : [Player]
+    
     var body: some View {
         Button {
             btnTap()
         } label: {
             VStack {
-                if !(playerCounter > numberPlayer) {
-                    Text("Player \(playerCounter)")
-                        .padding(.top, 20)
-                } else {
-                    EmptyView().padding(.top, 20)
+                if (hidden) {
+                    Spacer()
                 }
-                Spacer()
+                if !(counter > numberPlayer) {
+                    let index = Int(floor(Double(counter / 2)))
+                    Text("\(players[index].name)")
+                        .font(.largeTitle)
+                        .padding(.all, 20)
+                } else {
+                    EmptyView().padding(.all, 20)
+                }
+                if (!hidden) {
+                    Spacer()
+                }
                 Group {
-                    if playerCounter > numberPlayer {
+                    if counter > numberPlayer {
                         Text("Tap to start")
                     } else if hidden {
                         Text("Tap to show")
@@ -71,7 +81,7 @@ internal struct RoleViewer: View {
         .padding(10)
         .frame(width: 350, height: 500)
         .background(in: .rect(cornerRadius: 20), fillStyle: .init(eoFill: true, antialiased: true))
-        .backgroundStyle(spyNumbers.contains(playerCounter) && !hidden ? .red : .orange)
+        .backgroundStyle(spyNumbers.contains(counter) && !hidden ? .red : .orange)
         .onAppear {
             do {
                 let path = Bundle.main.path(forResource: "words", ofType: "json")
@@ -108,12 +118,12 @@ internal struct RoleViewer: View {
     private func btnTap() -> Void {
         guard hidden else {
             hidden.toggle()
-            playerCounter += 1
+            counter += 1
             return
         }
-        if spyNumbers.contains(playerCounter) {
+        if spyNumbers.contains(counter) {
             textToShow = String(localized: "You're a Spy")
-        } else if playerCounter > numberPlayer {
+        } else if counter > numberPlayer {
             gameRunning.wrappedValue = true
             dismiss()
         } else {
@@ -139,8 +149,10 @@ internal struct RoleViewerPreview : PreviewProvider {
         }
     }()
     
+    @State private static var players : [Player] = [Player(name: "name1"), Player(name: "name2")]
+    
     static var previews: some View {
-        RoleViewer(numberPlayer: 4, numberSpies: 1, gameRunning: $gameRunning)
+        RoleViewer(numberPlayer: 2, numberSpies: 1, gameRunning: $gameRunning, players: $players)
             .modelContainer(previewModelContainer)
     }
 }

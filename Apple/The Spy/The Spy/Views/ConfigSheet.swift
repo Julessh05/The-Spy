@@ -17,11 +17,29 @@ struct ConfigSheet: View {
     
     @Binding internal var rolesShowing : Bool
     
+    @State private var playerNames : [String] = Array(repeating: "", count: 2)
+    
+    @Binding internal var players : [Player]
+    
+    @State private var playerNameCache : [String] = Array(repeating: "", count: 2)
+    
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     TextField("Number Player", text: $numberPlayer)
+                        .glassEffect()
+                        .onChange(of: numberPlayer) {
+                            guard !numberPlayer.isEmpty else { return }
+                            playerNames = Array(
+                                repeating: "",
+                                count: Int(numberPlayer) ?? 2
+                            )
+                            for i in 0..<playerNameCache.count {
+                                guard i < playerNames.count else { return }
+                                playerNames[i] = playerNameCache[i]
+                            }
+                        }
                 } header: {
                     Text("Player")
                 } footer: {
@@ -34,6 +52,20 @@ struct ConfigSheet: View {
                 } footer: {
                     Text("Enter the number of spies among the player\nThe number of spies must be smaller than the number of total players")
                 }
+                Section {
+                    ForEach(0..<playerNames.count, id: \.self) {
+                        playerFieldNumber in
+                        TextField("Playername \(playerFieldNumber + 1)", text: $playerNames[playerFieldNumber])
+                    }
+                } header: {
+                    Text("Players")
+                } footer: {
+                    Text("Enter all player names")
+                }
+            }
+            .onAppear {
+                numberPlayer = "2"
+                numberSpies = "1"
             }
             .navigationTitle("New Game")
             .toolbarRole(.automatic)
@@ -41,6 +73,9 @@ struct ConfigSheet: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("OK") {
+                        playerNames.forEach {
+                            players.append(Player(name: $0))
+                        }
                         rolesShowing.toggle()
                         dismiss()
                     }
@@ -63,10 +98,13 @@ struct ConfigSheet: View {
     @Previewable @State var numberSpies: String = "1"
     
     @Previewable @State var rolesShowing: Bool = false
+    
+    @Previewable @State var players : [Player] = []
 
     ConfigSheet(
         numberPlayer: $numberPlayer,
         numberSpies: $numberSpies,
-        rolesShowing: $rolesShowing
+        rolesShowing: $rolesShowing,
+        players: $players
     )
 }

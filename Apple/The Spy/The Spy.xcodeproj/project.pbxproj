@@ -14,7 +14,6 @@
 		846A1D2A2BEB636800BCF715 /* The_SpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D292BEB636800BCF715 /* The_SpyUITests.swift */; };
 		846A1D2C2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */; };
 		84889ED62C8DE4160066F7CB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 84889ED52C8DE4160066F7CB /* Localizable.xcstrings */; };
-		849CB30F2C91F2A700F70594 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849CB30E2C91F2A700F70594 /* Configuration.swift */; };
 		849CB3192C92E83000F70594 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 849CB3182C92E83000F70594 /* Settings.bundle */; };
 		849CB31B2C92E91200F70594 /* SettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849CB31A2C92E91200F70594 /* SettingsHandler.swift */; };
 		84B97C192C8F2905005F2C81 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = 84B97C182C8F2905005F2C81 /* words.json */; };
@@ -49,7 +48,6 @@
 		846A1D292BEB636800BCF715 /* The_SpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITests.swift; sourceTree = "<group>"; };
 		846A1D2B2BEB636800BCF715 /* The_SpyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_SpyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84889ED52C8DE4160066F7CB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		849CB30E2C91F2A700F70594 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		849CB3122C92298300F70594 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/words.json; sourceTree = "<group>"; };
 		849CB3132C92DB7500F70594 /* The-Spy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "The-Spy-Info.plist"; sourceTree = SOURCE_ROOT; };
 		849CB3182C92E83000F70594 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				846A1D112BEB636800BCF715 /* Assets.xcassets */,
 				846A1D132BEB636800BCF715 /* The_Spy.entitlements */,
 				846A1D142BEB636800BCF715 /* Preview Content */,
-				849CB30E2C91F2A700F70594 /* Configuration.swift */,
 				849CB31A2C92E91200F70594 /* SettingsHandler.swift */,
 			);
 			path = "The Spy";
@@ -219,7 +216,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = "Julian Schumacher";
 				TargetAttributes = {
 					846A1D072BEB636600BCF715 = {
@@ -283,7 +280,6 @@
 		846A1D042BEB636600BCF715 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
-				849CB30F2C91F2A700F70594 /* Configuration.swift in Sources */,
 				846A1D0C2BEB636600BCF715 /* The_SpyApp.swift in Sources */,
 				849CB31B2C92E91200F70594 /* SettingsHandler.swift in Sources */,
 			);
@@ -388,6 +384,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -445,6 +442,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -459,8 +457,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The-Spy-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "The Spy";
@@ -476,11 +477,11 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 2.1;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.the-spy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -501,8 +502,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"The Spy/Preview Content\"";
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The-Spy-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "The Spy";
@@ -518,11 +522,11 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 2.1;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.jules.the-spy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
     "%@:%@" : {
       "localizations" : {
         "de" : {
@@ -96,6 +99,9 @@
           }
         }
       }
+    },
+    "Enter all player names" : {
+
     },
     "Enter the number of spies among the player\nThe number of spies must be smaller than the number of total players" : {
       "localizations" : {
@@ -306,6 +312,7 @@
       }
     },
     "Player %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -320,6 +327,12 @@
           }
         }
       }
+    },
+    "Playername %lld" : {
+
+    },
+    "Players" : {
+
     },
     "Roles" : {
       "localizations" : {

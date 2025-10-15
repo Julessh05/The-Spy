@@ -28,16 +28,16 @@ android {
         }
     }
     namespace "dev.jules.the_spy"
-compileSdk 35
-     ndkVersion '26.2.11394342'
+    compileSdk 36
+    ndkVersion '29.0.14033849 rc4'
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = "21"
     }
 
     sourceSets {
@@ -46,11 +46,11 @@ compileSdk 35
 
     defaultConfig {
         applicationId "dev.jules.the_spy"
+        minSdk 35
+        targetSdk 36
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
-        targetSdk 35
-         versionCode flutterVersionCode.toInteger()
+        versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         signingConfig signingConfigs.release
         multiDexEnabled true
@@ -68,7 +68,14 @@ compileSdk 35
             multiDexEnabled true
         }
     }
-    buildToolsVersion '35.0.1'
+    buildToolsVersion '36.0.0'
+    buildFeatures {
+        viewBinding true
+    }
+    dependenciesInfo {
+        includeInApk true
+        includeInBundle true
+    }
 }
 
 flutter {
